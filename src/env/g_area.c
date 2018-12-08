@@ -24,28 +24,28 @@ static void g_area_bounds_check(GArea* area, GEntity* ent)
 	//	double test = 0;
 	if (ent->transform.position[0] < area->bounds.pos.x)
 	{
-		printf("Hit boundary!\n");
+		grdn_log("Hit boundary!\n");
 		ent->transform.position[0] = area->bounds.pos.x;
 		ent->vel[0]		   = 0;
 	}
 
 	if (ent->transform.position[0] > area->bounds.pos.x + area->bounds.size.x)
 	{
-		printf("Hit boundary!\n");
+		grdn_log("Hit boundary!\n");
 		ent->transform.position[0] = area->bounds.pos.x + area->bounds.size.x;
 		ent->vel[0]		   = 0;
 	}
 
 	if (ent->transform.position[1] < area->bounds.pos.y)
 	{
-		printf("Hit boundary!\n");
+		grdn_log("Hit boundary!\n");
 		ent->transform.position[1] = area->bounds.pos.y;
 		ent->vel[1]		   = 0;
 	}
 
 	if (ent->transform.position[1] > area->bounds.pos.y + area->bounds.size.y)
 	{
-		printf("Hit boundary!\n");
+		grdn_log("Hit boundary!\n");
 		ent->transform.position[1] = area->bounds.pos.y + area->bounds.size.y;
 		ent->vel[1]		   = 0;
 	}
@@ -186,7 +186,7 @@ void g_area_update(GArea* area)
 {
 	if (area == NULL)
 	{
-		printf("nope!\n");
+		grdn_log("nope!");
 		return;
 	}
 	g_area_update_entities(area);
@@ -295,7 +295,7 @@ void g_area_destroy(GArea* area)
 		GEntity* ent = area->entities[i];
 		if (!ent)
 		{
-			printf("Something went wrong, null ent\n");
+			printf("Something went wrong, null ent");
 		}
 		else
 		{
@@ -351,23 +351,27 @@ void g_area_register_entity(GArea* area, GEntity* obj)
 #ifdef DEBUG
 	if ( obj->name == NULL )
 	{
-		grdn_log("Sneaky bugger, trying to add an entity with NO NAME\n");
+		grdn_log("Sneaky bugger, trying to add an entity with NO NAME");
 	}
 	
 	if ( is_entity_already_in_system(area, obj))
 	{
-		grdn_log("Entity already in system!\n");
+		grdn_log("Entity already in system!");
+	}
+	if ( !obj->destroy )
+	{
+		grdn_log("Warning: added an entity with no destroy callback set");
 	}
 #endif
 	
 	unsigned int eslot = find_first_available_entity_slot(area);
 	if ( eslot != -1 )
 	{
-		printf("Simple reusing slot %d | %s\n", eslot, obj->name);
+		grdn_log("Simple reusing slot %d | %s", eslot, obj->name);
 		area->entities[eslot] = obj;
 	}
 	
-	printf("Adding entity: %d %p %s\n", area->num_entities, obj, obj->name);
+	grdn_log("Adding entity: %d %p %s", area->num_entities, obj, obj->name);
 	area->num_entities++;
 
 	if (area->entities == NULL)
@@ -379,7 +383,7 @@ void g_area_register_entity(GArea* area, GEntity* obj)
 	{
 		area->entities = realloc(area->entities, sizeof(GEntity*) * (area->num_entities + 1));
 	}
-	printf("realloc'd\n");
+	grdn_log("realloc'd");
 	obj->area = area;
 	// area->entities = realloc(area->entities,)
 	area->entities[area->num_entities - 1] = obj;
@@ -392,7 +396,7 @@ void g_area_unregister_entity(GArea* area, GEntity* obj)
 		GEntity* ent = area->entities[i];
 		if ( ent == obj)
 		{
-			printf("Match! removing: %s\n", obj->name);
+			grdn_log("Match! removing: %s", obj->name);
 			area->entities[i] = NULL;
 		}
 		

@@ -17,8 +17,8 @@
 GEntity* g_entity_create(const char* name)
 {
 	struct GEntity* ent = calloc(1, sizeof(GEntity));
-	ent->think = NULL;
-	
+	ent->think	  = NULL;
+
 	//ent->think_interval = 2;
 	/*
 	 ent->art = NULL;
@@ -29,7 +29,7 @@ GEntity* g_entity_create(const char* name)
 	 ent->inventory = NULL;
 	 //ent->pos = vec3_create(NULL);
 	 */
-	ent->dir = 1;
+	ent->dir  = 1;
 	ent->data = NULL;
 	g_transform_create(&ent->transform);
 	// ent->pos     = vec3_create(NULL);
@@ -49,6 +49,8 @@ GEntity* g_entity_create(const char* name)
 	ent->num_actions	    = 0;
 	ent->available_interactions = NULL;
 	ent->num_interactions       = 0;
+	ent->subscriptions	  = NULL;
+
 	// g_transform_create(&ent->node.transform);
 	/*vec3_t test = ent->node.transform.position;
 	if (!test)
@@ -56,8 +58,7 @@ GEntity* g_entity_create(const char* name)
 		printf("Error happened. yo\n");
 		return ent;
 	}*/
-	
-	
+
 	//char* buf = calloc(256, sizeof(char));
 	//vec3_str(test, buf);
 	// sprintf(buf, "%s",buf );
@@ -78,17 +79,18 @@ void g_entity_destroy(GEntity* ent)
 		g_body_destroy(ent->body);
 		ent->body = NULL;
 	}
-	
+
 	if (ent->think)
 	{
 		GThinkRec* thinkrec = (GThinkRec*)ent->think;
 		if (thinkrec)
 		{
 			g_think_destroy(thinkrec);
-		}else{
+		}
+		else
+		{
 			printf("think cast FAILED\n");
 		}
-		
 	}
 
 	g_transform_destroy(&ent->transform);

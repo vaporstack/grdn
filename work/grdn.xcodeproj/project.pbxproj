@@ -52,6 +52,8 @@
 		57A005581F7398FD003231CC /* g_light.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A005541F7398FD003231CC /* g_light.h */; };
 		57A0E4421FFF173000923E44 /* g_player.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A0E4401FFF173000923E44 /* g_player.h */; };
 		57A0E4431FFF173000923E44 /* g_player.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A0E4411FFF173000923E44 /* g_player.c */; };
+		57ADF19721BB38A30099756F /* grdn_entity_subscriber.h in Headers */ = {isa = PBXBuildFile; fileRef = 57ADF19521BB38A30099756F /* grdn_entity_subscriber.h */; };
+		57ADF19821BB38A30099756F /* grdn_entity_subscriber.c in Sources */ = {isa = PBXBuildFile; fileRef = 57ADF19621BB38A30099756F /* grdn_entity_subscriber.c */; };
 		57B3559E206590BA00C73A8E /* g_jpred.c in Sources */ = {isa = PBXBuildFile; fileRef = 57B35598206590B900C73A8E /* g_jpred.c */; };
 		57B3559F206590BA00C73A8E /* g_dac.c in Sources */ = {isa = PBXBuildFile; fileRef = 57B35599206590B900C73A8E /* g_dac.c */; };
 		57B355A0206590BA00C73A8E /* g_body.c in Sources */ = {isa = PBXBuildFile; fileRef = 57B3559A206590B900C73A8E /* g_body.c */; };
@@ -170,6 +172,8 @@
 		57A005541F7398FD003231CC /* g_light.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_light.h; sourceTree = "<group>"; };
 		57A0E4401FFF173000923E44 /* g_player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_player.h; sourceTree = "<group>"; };
 		57A0E4411FFF173000923E44 /* g_player.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_player.c; sourceTree = "<group>"; };
+		57ADF19521BB38A30099756F /* grdn_entity_subscriber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_entity_subscriber.h; sourceTree = "<group>"; };
+		57ADF19621BB38A30099756F /* grdn_entity_subscriber.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_entity_subscriber.c; sourceTree = "<group>"; };
 		57B35597206590B900C73A8E /* g_body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_body.h; sourceTree = "<group>"; };
 		57B35598206590B900C73A8E /* g_jpred.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_jpred.c; sourceTree = "<group>"; };
 		57B35599206590B900C73A8E /* g_dac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_dac.c; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 				57D2AFCB1FC93BE100CCAD5C /* g_sticky.h */,
 				57A005511F7398C8003231CC /* g_think.c */,
 				57A005521F7398C8003231CC /* g_think.h */,
+				57ADF19621BB38A30099756F /* grdn_entity_subscriber.c */,
+				57ADF19521BB38A30099756F /* grdn_entity_subscriber.h */,
 			);
 			path = ent;
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				57CE907F20BE4447004D69E7 /* grdn_physics_cloth.h in Headers */,
 				57D2AF3E1FC2571E00CCAD5C /* g_water.h in Headers */,
 				D1DB87F81F1434D800BA023B /* g_camera.h in Headers */,
+				57ADF19721BB38A30099756F /* grdn_entity_subscriber.h in Headers */,
 				574399E9209F9BAD009A3A06 /* g_entity_manager.h in Headers */,
 				574951671E9AC6D400212EAF /* g_particlesystem.h in Headers */,
 				57437E0F207FDD7900D53A0F /* g_render_wsh.h in Headers */,
@@ -694,6 +701,7 @@
 				57B3559E206590BA00C73A8E /* g_jpred.c in Sources */,
 				D1DB87F61F1434D800BA023B /* g_camera.c in Sources */,
 				57CE907E20BE4447004D69E7 /* grdn_physics_cloth.c in Sources */,
+				57ADF19821BB38A30099756F /* grdn_entity_subscriber.c in Sources */,
 				57D2AFB71FC3BA1200CCAD5C /* g_particle_emitter.c in Sources */,
 				57D2AFCC1FC93BE100CCAD5C /* g_factory.c in Sources */,
 				57F8E2BA212907DE005614E7 /* g_entsys.c in Sources */,

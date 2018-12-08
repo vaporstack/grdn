@@ -7,6 +7,7 @@
 
 #include "g_clock.h"
 
+
 #include <stdlib.h>
 
 GClock* g_clock_create(unsigned long long seed)

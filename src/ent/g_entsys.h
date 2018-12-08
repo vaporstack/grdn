@@ -11,7 +11,8 @@
 #include "../lang/vmap.h"
 #include "g_entity.h"
 
-enum G_ENTITY_SYSTEM_ENTRIES {
+enum G_ENTITY_SYSTEM_ENTRIES
+{
 	G_ENTITY_SYSTEM_INTERACTABLE,
 	G_ENTITY_SYSTEM_FOO
 };
@@ -27,7 +28,7 @@ typedef struct GEntSys
 
 GEntSys* g_entsys_create(void);
 void     g_entsys_destroy(GEntSys* sys);
-void g_entsys_update(GEntSys* sys);
+void     g_entsys_update(GEntSys* sys);
 
 int g_entsys_register(GEntSys* sys, GEntity* ent, int type);
 

@@ -32,6 +32,10 @@ void g_area_register_entity(GArea*, GEntity*);
 void g_area_unregister_entity(GArea*, GEntity*);
 void g_area_query_entities(GArea*, GEntity*, int*);
 
+void g_area_service_subscription_create(GArea* area, GEntity* provider);
+bool g_area_service_subscription_query(GArea);
+void g_area_service_subscribe(GArea* area, GEntity*);
+
 GEntity** g_area_get_entities_radius(GArea*, double x, double y, double r, int* num, GEntity* exclude);
 
 void g_area_update(GArea*);
