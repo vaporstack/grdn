@@ -17,24 +17,6 @@ void grdn_deinit(void)
 {
 }
 
-#define GRDN_LOG_MAX 256
-
-void grdn_log(char* format, ...)
-{
-	
-	char buf[GRDN_LOG_MAX];
-	sprintf(buf, "%s", format);
-	va_list args;
-	va_start(args, format);
-	vsprintf(buf, format, args);
-	va_end(args);
-	
-#ifdef DEBUG
-	printf("[grdn]: %s\n", buf);
-#else
-	printf("DO NOTHING LATER: %s\n", buf);
-#endif
-}
 int grdn_check_version_match(const char* str)
 {
 	return (0 == strcmp(grdn_get_version_string(), str));

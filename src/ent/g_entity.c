@@ -95,11 +95,20 @@ void g_entity_destroy(GEntity* ent)
 
 	g_transform_destroy(&ent->transform);
 
+	if ( ent->destroy )
+	{
+		ent->destroy(ent);
+	}else
+	{
+		grdn_log("No destroy callback for : %s", ent->name);
+	}
 	// free(ent->pos);
 	free(ent->vel);
 	free(ent->vel_max);
 	if (ent->body)
 		free(ent->body);
+	
+	
 	free(ent);
 }
 

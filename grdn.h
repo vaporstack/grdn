@@ -13,13 +13,13 @@
 
 #include "stdio.h"
 #include "stdlib.h"
+#include "src/util/grdn_log.h"
 
 int		    grdn_check_version_match(const char* str);
 int		    grdn_check_compat_match(const char* str);
 char*		    grdn_get_version_string(void);
 char*		    grdn_get_compat_string(void);
 
-void	 grdn_log(char* fmt, ...);
 
 static inline char* grdn_get_compat_string_header(void)
 {
