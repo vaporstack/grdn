@@ -40,6 +40,8 @@
 		57561463218E5D210040B44C /* grdn_dialogtree.c in Sources */ = {isa = PBXBuildFile; fileRef = 57561461218E5D210040B44C /* grdn_dialogtree.c */; };
 		57561466218E5D490040B44C /* grdn_dialognode.h in Headers */ = {isa = PBXBuildFile; fileRef = 57561464218E5D490040B44C /* grdn_dialognode.h */; };
 		57561467218E5D490040B44C /* grdn_dialognode.c in Sources */ = {isa = PBXBuildFile; fileRef = 57561465218E5D490040B44C /* grdn_dialognode.c */; };
+		5759736B21BB5ECB0033EF48 /* grdn_action_mgr.h in Headers */ = {isa = PBXBuildFile; fileRef = 5759736921BB5ECB0033EF48 /* grdn_action_mgr.h */; };
+		5759736C21BB5ECB0033EF48 /* grdn_action_mgr.c in Sources */ = {isa = PBXBuildFile; fileRef = 5759736A21BB5ECB0033EF48 /* grdn_action_mgr.c */; };
 		578174D91FBA958E00E004F4 /* g_story.h in Headers */ = {isa = PBXBuildFile; fileRef = 578174D71FBA958E00E004F4 /* g_story.h */; };
 		578174DA1FBA958E00E004F4 /* g_story.c in Sources */ = {isa = PBXBuildFile; fileRef = 578174D81FBA958E00E004F4 /* g_story.c */; };
 		5781AFC220868B97003659FD /* g_npc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5781AFC020868B97003659FD /* g_npc.h */; };
@@ -160,6 +162,8 @@
 		57561461218E5D210040B44C /* grdn_dialogtree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_dialogtree.c; sourceTree = "<group>"; };
 		57561464218E5D490040B44C /* grdn_dialognode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_dialognode.h; sourceTree = "<group>"; };
 		57561465218E5D490040B44C /* grdn_dialognode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_dialognode.c; sourceTree = "<group>"; };
+		5759736921BB5ECB0033EF48 /* grdn_action_mgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_action_mgr.h; sourceTree = "<group>"; };
+		5759736A21BB5ECB0033EF48 /* grdn_action_mgr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_action_mgr.c; sourceTree = "<group>"; };
 		578174D71FBA958E00E004F4 /* g_story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_story.h; sourceTree = "<group>"; };
 		578174D81FBA958E00E004F4 /* g_story.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_story.c; sourceTree = "<group>"; };
 		5781AFC020868B97003659FD /* g_npc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_npc.h; sourceTree = "<group>"; };
@@ -370,6 +374,8 @@
 				57D2AFCB1FC93BE100CCAD5C /* g_sticky.h */,
 				57A005511F7398C8003231CC /* g_think.c */,
 				57A005521F7398C8003231CC /* g_think.h */,
+				5759736A21BB5ECB0033EF48 /* grdn_action_mgr.c */,
+				5759736921BB5ECB0033EF48 /* grdn_action_mgr.h */,
 				57ADF19621BB38A30099756F /* grdn_entity_subscriber.c */,
 				57ADF19521BB38A30099756F /* grdn_entity_subscriber.h */,
 			);
@@ -527,6 +533,7 @@
 				57D2AFCF1FC93BE100CCAD5C /* g_sticky.h in Headers */,
 				574399E5209F9A3D009A3A06 /* g_extloader.h in Headers */,
 				5730AF981FE7162700EF5C2F /* g_game.h in Headers */,
+				5759736B21BB5ECB0033EF48 /* grdn_action_mgr.h in Headers */,
 				57B355A2206590BA00C73A8E /* g_dac.h in Headers */,
 				57A005571F7398FD003231CC /* g_light.h in Headers */,
 				57D2AFCD1FC93BE100CCAD5C /* g_factory.h in Headers */,
@@ -731,6 +738,7 @@
 				574951651E9AC6D400212EAF /* g_particlesystem.c in Sources */,
 				57D2AFBB1FC4848E00CCAD5C /* g_particle_system.c in Sources */,
 				57FEFCA71FAEAAB700CBCCE7 /* g_transform.c in Sources */,
+				5759736C21BB5ECB0033EF48 /* grdn_action_mgr.c in Sources */,
 				57D2AFD91FCB83D000CCAD5C /* g_render.c in Sources */,
 				57050B1F1FEAFF9D00C6D4C2 /* grdn.c in Sources */,
 				D154FF4D1FC4D68300AE014F /* g_particle_affector.c in Sources */,

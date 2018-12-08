@@ -45,10 +45,11 @@ GEntity* g_entity_create(const char* name)
 	ent->name = name;
 	ent->art  = NULL;
 	// ent->grounded = true;
-	ent->available_actions      = NULL;
-	ent->num_actions	    = 0;
-	ent->available_interactions = NULL;
-	ent->num_interactions       = 0;
+	//ent->available_actions      = NULL;
+	//ent->num_actions	    = 0;
+	//ent->available_interactions = NULL;
+	//ent->num_interactions       = 0;
+	
 	ent->subscriptions	  = NULL;
 
 	// g_transform_create(&ent->node.transform);
