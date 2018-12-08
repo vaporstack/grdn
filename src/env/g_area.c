@@ -391,12 +391,24 @@ void g_area_register_entity(GArea* area, GEntity* obj)
 
 void g_area_unregister_entity(GArea* area, GEntity* obj)
 {
+	if ( obj == NULL )
+	{
+#ifdef DEBUG
+		grdn_log("Not removing a NULL object duh");
+#endif
+		return;
+		
+		
+	}
+	
 	for ( int i =0; i < area->num_entities; i++ )
 	{
 		GEntity* ent = area->entities[i];
 		if ( ent == obj)
 		{
+#ifdef DEBUG
 			grdn_log("Match! removing: %s", obj->name);
+#endif
 			area->entities[i] = NULL;
 		}
 		

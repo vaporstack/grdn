@@ -23,7 +23,7 @@ signed int grdn_entity_subscription_create(const char* ident)
 		grdn_log("Exceeded identifier limit!\n");
 		return -1;
 	}
-
+	grdn_log("creating subscription: %s", ident);
 	signed int exists = grdn_entity_subscription_query(ident);
 	if (exists == -1)
 	{
