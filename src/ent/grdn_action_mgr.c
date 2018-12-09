@@ -18,6 +18,12 @@ GActionMgr* grdn_action_mgr_create(void)
 	return mgr;
 }
 
+void grdn_action_mgr_destroy(GActionMgr* mgr)
+{
+	// todo fill this out
+	
+}
+
 void grdn_action_mgr_add(GActionMgr* mgr, entity_action action)
 {
 	if ( mgr->num == 0 )
@@ -46,7 +52,15 @@ void grdn_action_mgr_remove(GActionMgr* mgr, entity_action action)
 		if ( act == action)
 		{
 			grdn_log("Removing action %d", i);
-			
+			//todo jk don't do anything
 		}
 	}
+}
+void grdn_action_mgr_activate(GActionMgr* mgr, entity_action action)
+{
+	
+}
+void grdn_action_mgr_deactivate(GActionMgr* mgr, entity_action action)
+{
+	
 }
