@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5716CD0921BEE68E00A798B4 /* grdn.c in Sources */ = {isa = PBXBuildFile; fileRef = 5716CD0821BEE68D00A798B4 /* grdn.c */; };
+		5716CD0C21BEE6A700A798B4 /* grdn_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 5716CD0B21BEE6A700A798B4 /* grdn_log.c */; };
 		5722FDD221B0C8D3002865A8 /* g_think.c in Sources */ = {isa = PBXBuildFile; fileRef = 5722FD5721B0C8D3002865A8 /* g_think.c */; };
 		5722FDD321B0C8D3002865A8 /* g_factory.c in Sources */ = {isa = PBXBuildFile; fileRef = 5722FD5821B0C8D3002865A8 /* g_factory.c */; };
 		5722FDD421B0C8D3002865A8 /* g_sticky.c in Sources */ = {isa = PBXBuildFile; fileRef = 5722FD5A21B0C8D3002865A8 /* g_sticky.c */; };
@@ -84,6 +86,10 @@
 
 /* Begin PBXFileReference section */
 		57012D801EED5DD400F10594 /* libgrdn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgrdn.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5716CD0721BEE68D00A798B4 /* grdn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = grdn.h; path = ../grdn.h; sourceTree = "<group>"; };
+		5716CD0821BEE68D00A798B4 /* grdn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = grdn.c; path = ../grdn.c; sourceTree = "<group>"; };
+		5716CD0A21BEE6A600A798B4 /* grdn_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grdn_log.h; sourceTree = "<group>"; };
+		5716CD0B21BEE6A700A798B4 /* grdn_log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = grdn_log.c; sourceTree = "<group>"; };
 		5722FD5621B0C8D3002865A8 /* g_entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_entity.h; sourceTree = "<group>"; };
 		5722FD5721B0C8D3002865A8 /* g_think.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_think.c; sourceTree = "<group>"; };
 		5722FD5821B0C8D3002865A8 /* g_factory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_factory.c; sourceTree = "<group>"; };
@@ -232,6 +238,8 @@
 		5722FD5421B0C8D3002865A8 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5716CD0821BEE68D00A798B4 /* grdn.c */,
+				5716CD0721BEE68D00A798B4 /* grdn.h */,
 				5722FD5521B0C8D3002865A8 /* ent */,
 				5722FD6021B0C8D3002865A8 /* core */,
 				5722FD6921B0C8D3002865A8 /* util */,
@@ -287,6 +295,8 @@
 			children = (
 				5722FD6A21B0C8D3002865A8 /* g_serial.h */,
 				5722FD6B21B0C8D3002865A8 /* g_serial.c */,
+				5716CD0B21BEE6A700A798B4 /* grdn_log.c */,
+				5716CD0A21BEE6A600A798B4 /* grdn_log.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -553,12 +563,14 @@
 				5722FDF721B0C8D3002865A8 /* g_overlay.c in Sources */,
 				5722FDED21B0C8D3002865A8 /* grdn_physics_space.c in Sources */,
 				5722FDEF21B0C8D3002865A8 /* grdn_physics_cloth.c in Sources */,
+				5716CD0C21BEE6A700A798B4 /* grdn_log.c in Sources */,
 				5722FDF021B0C8D3002865A8 /* g_light.c in Sources */,
 				5722FE0421B0C8D3002865A8 /* g_particle_flock.c in Sources */,
 				5722FDF521B0C8D3002865A8 /* g_water.c in Sources */,
 				5722FDE421B0C8D3002865A8 /* g_dialog.c in Sources */,
 				5722FDF621B0C8D3002865A8 /* g_effect.c in Sources */,
 				5722FDDA21B0C8D3002865A8 /* g_property.c in Sources */,
+				5716CD0921BEE68E00A798B4 /* grdn.c in Sources */,
 				5722FDD621B0C8D3002865A8 /* g_entsys.c in Sources */,
 				5722FDE621B0C8D3002865A8 /* g_player.c in Sources */,
 				5722FDFF21B0C8D3002865A8 /* g_particle.c in Sources */,

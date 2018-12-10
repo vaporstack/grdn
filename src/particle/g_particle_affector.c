@@ -7,6 +7,8 @@
 
 #include "g_particle_affector.h"
 
+#include <stdlib.h>
+
 GParticleAffector* g_particle_affector_create(void)
 {
 	return calloc(1, sizeof(GParticleAffector));

@@ -14,6 +14,8 @@
 #include "../env/g_node.h"
 #include <deps/gl-matrix/gl-matrix.h>
 #include <r4/src/geo/r_object.h>
+//#include "grdn_action_mgr.h"
+
 //#include <wsh/wsh.h>
 
 typedef void (*grdn_action_function)(void* actor, void* target);
@@ -47,11 +49,11 @@ typedef struct GEntity
 
 	RObject* art;
 
-	unsigned int	  num_actions;
-	grdn_action_function* available_actions;
+	//unsigned int	  num_actions;
+	//grdn_action_function* available_actions;
 
-	unsigned int	  num_interactions;
-	grdn_action_function* available_interactions;
+	//unsigned int	  num_interactions;
+	//grdn_action_function* available_interactions;
 
 	int flags;
 	// WSequence* seq;
@@ -63,7 +65,8 @@ typedef struct GEntity
 	int 	num_subscriptions;
 	int*   subscription_indexes;
 	void  (**subscriptions)(void* sender, struct GEntity* receiver);
-
+	
+	void* action_mgr;
 	GNode  node;
 	// bool       grounded;
 	GTransform transform;
