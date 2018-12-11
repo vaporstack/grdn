@@ -51,7 +51,7 @@ void g_dialog_update(DialogBox* box)
 	int num = (int)strlen(box->text);
 
 	float sz = box->pad_size;
-	drw_text_get_bbox(box->text, num, data);
+	drw_type_get_bbox(box->text, num, data);
 	float ax = data[0];
 	float ay = data[1];
 	//float az = data[2];
@@ -145,7 +145,7 @@ void g_dialog_render(DialogBox* box)
 	drw_translate_y(box->pad_size * 2);
 	drw_translate_x(-box->verts[8]);
 	r_rawpoly(box->verts, box->vert_num, true);
-	drw_text(box->text);
+	drw_type_draw(box->text);
 	drw_pop();
 	//r_scale_x(-1);
 

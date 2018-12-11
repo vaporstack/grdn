@@ -8,22 +8,22 @@
 //
 
 #include "grdn_dialognode.h"
-#include <stdlib.h>
 #include <drw/drw.h>
+#include <stdlib.h>
 
-GDialogNode* grdn_dialognode_create(void* gui, const char** text, unsigned int num )
+GDialogNode* grdn_dialognode_create(void* gui, const char** text, unsigned int num)
 {
 	GDialogNode* node = calloc(1, sizeof(GDialogNode));
-	node->dlog = calloc(1, sizeof(GDialogNode));
-	node->dlog[0] = grdn_dialog_create(gui, text, num);
-	node->num = 1;
-	node->cur = 0;
+	node->dlog	= calloc(1, sizeof(GDialogNode));
+	node->dlog[0]     = grdn_dialog_create(gui, text, num);
+	node->num	 = 1;
+	node->cur	 = 0;
 	return node;
 }
 
 void grdn_dialognode_destroy(GDialogNode* node)
 {
-	for ( int i = 0; i < node->num; i++ )
+	for (int i = 0; i < node->num; i++)
 		grdn_dialog_destroy(node->dlog[i]);
 	free(node);
 }
@@ -34,10 +34,10 @@ void grdn_dialognode_draw(GDialogNode* node)
 	if (!dlog->text)
 	{
 		printf("No text!\n");
-		drw_text_hpvec_draw("FAiL");
+		drw_type_hpvec_draw("FAiL");
 		return;
 	}
 	const char* text = dlog->text[dlog->cur];
-	
-	drw_text(text);
+
+	drw_type_draw(text);
 }

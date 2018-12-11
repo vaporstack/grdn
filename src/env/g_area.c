@@ -8,8 +8,8 @@
 #include "g_area.h"
 
 //#include "run_area.h"
-#include <drw/drw.h>
 #include <deps/gl-matrix/gl-matrix.h>
+#include <drw/drw.h>
 #include <grdn/grdn.h>
 #include <r4/src/geo/r_object.h>
 #include <stdlib.h>
@@ -53,26 +53,28 @@ static void g_area_bounds_check(GArea* area, GEntity* ent)
 
 GEntity** g_area_get_entities_radius(GArea* area, double x, double y, double r, int* num, GEntity* exclude)
 {
-	GEntity** res = NULL;
-	int rnum = 0;
-	for ( int i = 0; i < area->num_entities; i++ )
+	GEntity** res  = NULL;
+	int       rnum = 0;
+	for (int i = 0; i < area->num_entities; i++)
 	{
 		GEntity* e = area->entities[i];
-		if (e == exclude )
+		if (e == exclude)
 			continue;
-		
+
 		double d = dist2d(x, y, e->transform.position[0], e->transform.position[1]);
-		if ( d < r )
+		if (d < r)
 		{
 			printf("entity within range\n");
 			rnum++;
-			if ( !res )
+			if (!res)
 			{
 				res = calloc(1, sizeof(GEntity*));
-			}else{
+			}
+			else
+			{
 				res = realloc(res, rnum * sizeof(GEntity*));
 			}
-			res[rnum-1] = e;
+			res[rnum - 1] = e;
 		}
 	}
 	*num = rnum;
@@ -207,8 +209,8 @@ void g_area_draw_debug(GArea* area)
 	//double h   = app_settings.framebuffer_height;
 	drw_push();
 	drw_translate(w * -.3333, h * .333, 0);
-	//drw_text_set_size(18, 18);
-	drw_text("%d entities.", num);
+	//drw_type_set_size(18, 18);
+	drw_type_draw("%d entities.", num);
 	//drw_translate(w*.5, h * -.333,0);
 	drw_pop();
 
@@ -250,7 +252,7 @@ void g_area_draw(GArea* area)
 
 			drw_push();
 			drw_gtransform_apply(obj->transform);
-			drw_text(obj->name);
+			drw_type_draw(obj->name);
 
 			drw_axis();
 
@@ -320,25 +322,24 @@ void g_area_populate_placeholder(GArea* area)
 #ifdef DEBUG
 static bool is_entity_already_in_system(GArea* area, GEntity* entity)
 {
-	for(unsigned int i = 0; i < area->num_entities; i++)
+	for (unsigned int i = 0; i < area->num_entities; i++)
 		if (area->entities[i] == entity)
 			return true;
-	
+
 	return false;
 }
 #endif
 
 static unsigned int find_first_available_entity_slot(GArea* area)
 {
-	for(unsigned int i = 0; i < area->num_entities;i ++)
+	for (unsigned int i = 0; i < area->num_entities; i++)
 	{
 		GEntity* ent = area->entities[i];
-		if ( ent == NULL)
+		if (ent == NULL)
 			return i;
 	}
 	return -1;
 }
-
 
 void g_area_register_entity(GArea* area, GEntity* obj)
 {
@@ -347,30 +348,30 @@ void g_area_register_entity(GArea* area, GEntity* obj)
 		printf("Cowardly refusing to add a NULL entity.");
 		return;
 	}
-	
+
 #ifdef DEBUG
-	if ( obj->name == NULL )
+	if (obj->name == NULL)
 	{
 		grdn_log("Sneaky bugger, trying to add an entity with NO NAME");
 	}
-	
-	if ( is_entity_already_in_system(area, obj))
+
+	if (is_entity_already_in_system(area, obj))
 	{
 		grdn_log("Entity already in system!");
 	}
-	if ( !obj->destroy )
+	if (!obj->destroy)
 	{
 		grdn_log("Warning: added an entity with no destroy callback set");
 	}
 #endif
-	
+
 	unsigned int eslot = find_first_available_entity_slot(area);
-	if ( eslot != -1 )
+	if (eslot != -1)
 	{
 		grdn_log("Simple reusing slot %d | %s", eslot, obj->name);
 		area->entities[eslot] = obj;
 	}
-	
+
 	grdn_log("Adding entity: %d %p %s", area->num_entities, obj, obj->name);
 	area->num_entities++;
 
@@ -391,27 +392,24 @@ void g_area_register_entity(GArea* area, GEntity* obj)
 
 void g_area_unregister_entity(GArea* area, GEntity* obj)
 {
-	if ( obj == NULL )
+	if (obj == NULL)
 	{
 #ifdef DEBUG
 		grdn_log("Not removing a NULL object duh");
 #endif
 		return;
-		
-		
 	}
-	
-	for ( int i =0; i < area->num_entities; i++ )
+
+	for (int i = 0; i < area->num_entities; i++)
 	{
 		GEntity* ent = area->entities[i];
-		if ( ent == obj)
+		if (ent == obj)
 		{
 #ifdef DEBUG
 			grdn_log("Match! removing: %s", obj->name);
 #endif
 			area->entities[i] = NULL;
 		}
-		
 	}
 }
 
