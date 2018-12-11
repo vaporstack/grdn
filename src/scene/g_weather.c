@@ -7,6 +7,8 @@
 
 #include "g_weather.h"
 
+#include <stdlib.h>
+
 GWeather* g_weather_create(void)
 {
 	GWeather* weather = calloc(1, sizeof(GWeather));

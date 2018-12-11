@@ -46,6 +46,8 @@
 		578174DA1FBA958E00E004F4 /* g_story.c in Sources */ = {isa = PBXBuildFile; fileRef = 578174D81FBA958E00E004F4 /* g_story.c */; };
 		5781AFC220868B97003659FD /* g_npc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5781AFC020868B97003659FD /* g_npc.h */; };
 		5781AFC320868B97003659FD /* g_npc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5781AFC120868B97003659FD /* g_npc.c */; };
+		57939B5221BF685800F74BF4 /* grdn_entity_typelibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 57939B5021BF685800F74BF4 /* grdn_entity_typelibrary.h */; };
+		57939B5321BF685800F74BF4 /* grdn_entity_typelibrary.c in Sources */ = {isa = PBXBuildFile; fileRef = 57939B5121BF685800F74BF4 /* grdn_entity_typelibrary.c */; };
 		5797936221632A7C00A0F4DA /* g_particle_flock.h in Headers */ = {isa = PBXBuildFile; fileRef = 5797936021632A7C00A0F4DA /* g_particle_flock.h */; };
 		5797936321632A7C00A0F4DA /* g_particle_flock.c in Sources */ = {isa = PBXBuildFile; fileRef = 5797936121632A7C00A0F4DA /* g_particle_flock.c */; };
 		57A005551F7398FD003231CC /* g_light.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A005531F7398FD003231CC /* g_light.c */; };
@@ -168,6 +170,8 @@
 		578174D81FBA958E00E004F4 /* g_story.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_story.c; sourceTree = "<group>"; };
 		5781AFC020868B97003659FD /* g_npc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_npc.h; sourceTree = "<group>"; };
 		5781AFC120868B97003659FD /* g_npc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_npc.c; sourceTree = "<group>"; };
+		57939B5021BF685800F74BF4 /* grdn_entity_typelibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_entity_typelibrary.h; sourceTree = "<group>"; };
+		57939B5121BF685800F74BF4 /* grdn_entity_typelibrary.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_entity_typelibrary.c; sourceTree = "<group>"; };
 		5797936021632A7C00A0F4DA /* g_particle_flock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_particle_flock.h; sourceTree = "<group>"; };
 		5797936121632A7C00A0F4DA /* g_particle_flock.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_particle_flock.c; sourceTree = "<group>"; };
 		57A004E91F721717003231CC /* g_serial.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_serial.c; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 				5759736921BB5ECB0033EF48 /* grdn_action_mgr.h */,
 				57ADF19621BB38A30099756F /* grdn_entity_subscriber.c */,
 				57ADF19521BB38A30099756F /* grdn_entity_subscriber.h */,
+				57939B5021BF685800F74BF4 /* grdn_entity_typelibrary.h */,
+				57939B5121BF685800F74BF4 /* grdn_entity_typelibrary.c */,
 			);
 			path = ent;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				D1E3CCE21F84185800BA6CE1 /* g_particle_presets.h in Headers */,
 				57E624C921BB503F00936385 /* grdn_log.h in Headers */,
 				5708AA02208FF89800A9E776 /* g_drawable.h in Headers */,
+				57939B5221BF685800F74BF4 /* grdn_entity_typelibrary.h in Headers */,
 				D1E3CCE61F84185F00BA6CE1 /* g_behaviors.h in Headers */,
 				5781AFC220868B97003659FD /* g_npc.h in Headers */,
 				57D2AFB61FC3BA1200CCAD5C /* g_particle_emitter.h in Headers */,
@@ -718,6 +725,7 @@
 				57ADF19821BB38A30099756F /* grdn_entity_subscriber.c in Sources */,
 				57E624CA21BB503F00936385 /* grdn_log.c in Sources */,
 				57D2AFB71FC3BA1200CCAD5C /* g_particle_emitter.c in Sources */,
+				57939B5321BF685800F74BF4 /* grdn_entity_typelibrary.c in Sources */,
 				57D2AFCC1FC93BE100CCAD5C /* g_factory.c in Sources */,
 				57F8E2BA212907DE005614E7 /* g_entsys.c in Sources */,
 				57F8E2B8212907DE005614E7 /* g_entity.c in Sources */,

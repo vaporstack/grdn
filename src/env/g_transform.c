@@ -7,6 +7,8 @@
 
 #include "g_transform.h"
 
+#include <stdlib.h>
+
 void g_transform_create(GTransform* t)
 {
 	// GTransform* t = calloc(1, sizeof(GTransform));

@@ -12,6 +12,8 @@
 #include "g_entity.h"
 #include <stdbool.h>
 
+//	this is more or less for direct (consensual) transactions between entity types.
+
 //#include <stdio.h>
 
 /*

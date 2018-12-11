@@ -11,7 +11,7 @@
 #include <deps/gl-matrix/gl-matrix.h>
 
 #include "g_think.h"
-
+#include "../util/grdn_log.h"
 #include <stdlib.h>
 
 GEntity* g_entity_create(const char* name)
@@ -38,7 +38,7 @@ GEntity* g_entity_create(const char* name)
 	if (!name)
 	{
 #ifdef DEBUG
-		printf("Naming an unnamed entity!\n");
+		grdn_log("Naming an unnamed entity!\n");
 #endif
 		name = "unnamed_gentity";
 	}
@@ -90,7 +90,7 @@ void g_entity_destroy(GEntity* ent)
 		}
 		else
 		{
-			printf("think cast FAILED\n");
+			grdn_log("think cast FAILED\n");
 		}
 	}
 
