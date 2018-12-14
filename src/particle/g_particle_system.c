@@ -11,6 +11,7 @@
 
 #include <drw/drw.h>
 
+
 // static void g_particle_system_update_particles(GParticleSystem* sys);
 
 void set_particle_death(GParticleSystem* sys, GParticleAffector* affect,
@@ -291,7 +292,7 @@ static bool check_bounds_box(vec3_t b, vec3_t p)
 	return false;
 }
 
-static bool check_bounds(struct ParticleSystem* sys, vec3_t b, vec3_t p)
+static bool check_bounds(struct GParticleSystem* sys, vec3_t b, vec3_t p)
 {
 	//double px = p[0];
 	//double py = p[1];

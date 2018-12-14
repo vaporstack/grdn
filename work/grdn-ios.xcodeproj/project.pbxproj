@@ -261,16 +261,16 @@
 		5722FD5521B0C8D3002865A8 /* ent */ = {
 			isa = PBXGroup;
 			children = (
-				5722FD5621B0C8D3002865A8 /* g_entity.h */,
-				5722FD5721B0C8D3002865A8 /* g_think.c */,
-				5722FD5821B0C8D3002865A8 /* g_factory.c */,
-				5722FD5921B0C8D3002865A8 /* g_entsys.h */,
-				5722FD5A21B0C8D3002865A8 /* g_sticky.c */,
-				5722FD5B21B0C8D3002865A8 /* g_think.h */,
 				5722FD5C21B0C8D3002865A8 /* g_entity.c */,
-				5722FD5D21B0C8D3002865A8 /* g_factory.h */,
-				5722FD5E21B0C8D3002865A8 /* g_sticky.h */,
+				5722FD5621B0C8D3002865A8 /* g_entity.h */,
 				5722FD5F21B0C8D3002865A8 /* g_entsys.c */,
+				5722FD5921B0C8D3002865A8 /* g_entsys.h */,
+				5722FD5821B0C8D3002865A8 /* g_factory.c */,
+				5722FD5D21B0C8D3002865A8 /* g_factory.h */,
+				5722FD5A21B0C8D3002865A8 /* g_sticky.c */,
+				5722FD5E21B0C8D3002865A8 /* g_sticky.h */,
+				5722FD5721B0C8D3002865A8 /* g_think.c */,
+				5722FD5B21B0C8D3002865A8 /* g_think.h */,
 			);
 			path = ent;
 			sourceTree = "<group>";
@@ -330,36 +330,28 @@
 		5722FD7A21B0C8D3002865A8 /* env */ = {
 			isa = PBXGroup;
 			children = (
-				5722FD7B21B0C8D3002865A8 /* g_transform.c */,
-				5722FD7C21B0C8D3002865A8 /* g_npc.c */,
-				5722FD7D21B0C8D3002865A8 /* g_vecfield.h */,
-				5722FD7E21B0C8D3002865A8 /* g_area.h */,
-				5722FD7F21B0C8D3002865A8 /* g_node.h */,
-				5722FD8021B0C8D3002865A8 /* g_dialog.c */,
-				5722FD8121B0C8D3002865A8 /* g_clock.h */,
-				5722FD8221B0C8D3002865A8 /* g_map.c */,
-				5722FD8321B0C8D3002865A8 /* g_world.h */,
-				5722FD8421B0C8D3002865A8 /* g_player.c */,
-				5722FD8521B0C8D3002865A8 /* g_transform.h */,
-				5722FD8621B0C8D3002865A8 /* g_npc.h */,
-				5722FD8721B0C8D3002865A8 /* g_dialog.h */,
-				5722FD8821B0C8D3002865A8 /* g_node.c */,
 				5722FD8921B0C8D3002865A8 /* g_area.c */,
-				5722FD8A21B0C8D3002865A8 /* g_vecfield.c */,
-				5722FD8B21B0C8D3002865A8 /* g_map.h */,
-				5722FD8C21B0C8D3002865A8 /* build */,
+				5722FD7E21B0C8D3002865A8 /* g_area.h */,
 				5722FD8D21B0C8D3002865A8 /* g_clock.c */,
+				5722FD8121B0C8D3002865A8 /* g_clock.h */,
+				5722FD8021B0C8D3002865A8 /* g_dialog.c */,
+				5722FD8721B0C8D3002865A8 /* g_dialog.h */,
+				5722FD8221B0C8D3002865A8 /* g_map.c */,
+				5722FD8B21B0C8D3002865A8 /* g_map.h */,
+				5722FD8821B0C8D3002865A8 /* g_node.c */,
+				5722FD7F21B0C8D3002865A8 /* g_node.h */,
+				5722FD7C21B0C8D3002865A8 /* g_npc.c */,
+				5722FD8621B0C8D3002865A8 /* g_npc.h */,
+				5722FD8421B0C8D3002865A8 /* g_player.c */,
 				5722FD8E21B0C8D3002865A8 /* g_player.h */,
+				5722FD7B21B0C8D3002865A8 /* g_transform.c */,
+				5722FD8521B0C8D3002865A8 /* g_transform.h */,
+				5722FD8A21B0C8D3002865A8 /* g_vecfield.c */,
+				5722FD7D21B0C8D3002865A8 /* g_vecfield.h */,
 				5722FD8F21B0C8D3002865A8 /* g_world.c */,
+				5722FD8321B0C8D3002865A8 /* g_world.h */,
 			);
 			path = env;
-			sourceTree = "<group>";
-		};
-		5722FD8C21B0C8D3002865A8 /* build */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = build;
 			sourceTree = "<group>";
 		};
 		5722FD9021B0C8D3002865A8 /* lang */ = {
@@ -395,21 +387,21 @@
 		5722FD9B21B0C8D3002865A8 /* scene */ = {
 			isa = PBXGroup;
 			children = (
-				5722FD9C21B0C8D3002865A8 /* g_water.h */,
-				5722FD9D21B0C8D3002865A8 /* g_light.c */,
-				5722FD9E21B0C8D3002865A8 /* g_textseq.h */,
 				5722FD9F21B0C8D3002865A8 /* g_background.c */,
-				5722FDA021B0C8D3002865A8 /* g_effect.h */,
-				5722FDA121B0C8D3002865A8 /* g_camera.c */,
-				5722FDA221B0C8D3002865A8 /* g_weather.c */,
-				5722FDA321B0C8D3002865A8 /* g_overlay.h */,
-				5722FDA421B0C8D3002865A8 /* g_textseq.c */,
-				5722FDA521B0C8D3002865A8 /* g_light.h */,
-				5722FDA621B0C8D3002865A8 /* g_water.c */,
 				5722FDA721B0C8D3002865A8 /* g_background.h */,
+				5722FDA121B0C8D3002865A8 /* g_camera.c */,
 				5722FDA821B0C8D3002865A8 /* g_camera.h */,
 				5722FDA921B0C8D3002865A8 /* g_effect.c */,
+				5722FDA021B0C8D3002865A8 /* g_effect.h */,
+				5722FD9D21B0C8D3002865A8 /* g_light.c */,
+				5722FDA521B0C8D3002865A8 /* g_light.h */,
 				5722FDAA21B0C8D3002865A8 /* g_overlay.c */,
+				5722FDA321B0C8D3002865A8 /* g_overlay.h */,
+				5722FDA421B0C8D3002865A8 /* g_textseq.c */,
+				5722FD9E21B0C8D3002865A8 /* g_textseq.h */,
+				5722FDA621B0C8D3002865A8 /* g_water.c */,
+				5722FD9C21B0C8D3002865A8 /* g_water.h */,
+				5722FDA221B0C8D3002865A8 /* g_weather.c */,
 				5722FDAB21B0C8D3002865A8 /* g_weather.h */,
 			);
 			path = scene;

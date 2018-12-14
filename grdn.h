@@ -41,6 +41,7 @@ static inline char* grdn_get_version_string_header(void)
 #include "src/ent/g_entsys.h"
 #include "src/ent/g_think.h"
 #include "src/env/g_world.h"
+#include "src/ent/g_factory.h"
 
 #include "src/comp/g_body.h"
 #include "src/comp/g_dac.h"

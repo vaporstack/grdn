@@ -14,6 +14,7 @@
 //	todo: get rid of this!
 #include <r4/r4.h>
 #include <drw/drw.h>
+#include <deps/vector/vector.h>
 
 static GEntity* current_cam = NULL;
 

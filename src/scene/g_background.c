@@ -42,7 +42,7 @@ GBackground* g_background_create(void)
 		     i++, j += 2, k += 2)
 		{
 			//vec3_t point = bg->stars->data[i];
-			RVec* point = &bg->stars->data[i];
+			VVec* point = &bg->stars->data[i];
 			star_raw[i] = point->x;
 			star_raw[j] = point->y;
 			star_raw[k] = point->z;
@@ -110,7 +110,7 @@ static void _update_haze(GBackground* bg)
 			double az = z * xw;
 			if (z > 0)
 			{
-				RVec* prev =
+				VVec* prev =
 				    v_block_get(bg->haze, x, 1, z - 1);
 				double py = prev->y;
 				ay += r_rand_double(NULL) * py;
@@ -145,7 +145,7 @@ void g_background_draw_stars(GBackground* bg)
 	for (int i = 0; i < bg->stars->len; ++i)
 	{
 		//vec3_t v = bg->stars->data[i];
-		RVec* v = bg->stars->data[i];
+		VVec* v = bg->stars->data[i];
 		// drw_push();
 
 		// drw_translate_vec3(v);
@@ -187,7 +187,7 @@ void g_background_draw_haze(GBackground* bg)
 		drw_line3_r(l);
 	}
 */
-	
+
 	/*
 
 	//	todo? rewrite this to use arrays?

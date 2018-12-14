@@ -7,31 +7,32 @@
 
 #include "g_factory.h"
 
+static GFactory* implicit = NULL;
 
 GFactory* g_factory_create(void)
 {
 	GFactory* factory = calloc(1, sizeof(GFactory));
-	factory->map = new_map();
+	factory->map      = new_map();
 	return factory;
 }
 
 void g_factory_destroy(GFactory* factory)
 {
-	destroy_map(factory->map);
-	
+	destroy_map(&factory->map);
 }
 
-GEntity *g_factory_create_ident(const char* type);
-GEntity *g_factory_create_type(int type);
-
-GEntity *g_factory_create_ident(const char* ident)
+GEntity* g_factory_create_ident(const char* type)
 {
-	
 	return NULL;
 }
 
-int      g_factory_register(factory_create_func fun)
+GEntity* g_factory_create_type(int type)
 {
-	
+	return NULL;
+}
+
+int g_factory_register(factory_create_func fun)
+{
+
 	return 0;
 }

@@ -8,7 +8,7 @@
 #ifndef g_camera_h_
 #define g_camera_h_
 
-#include <grdn/grdn.h>
+//#include <grdn/grdn.h>
 
 #include "../ent/g_entity.h"
 #include <deps/gl-matrix/gl-matrix.h>

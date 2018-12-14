@@ -10,6 +10,12 @@
 
 #include "../particle/g_particlesystem.h"
 //#include "../particle/g_particle_presets.h"
+
+//	I HATE THIS and IT SUCKS AND ITS MY FAULT
+#include <deps/vector/vector.h>
+#include <vbl/src/geo/v_vec.h>
+//	end I HaTE THIS BLOCK
+
 #include <vbl/src/geo/v_block.h>
 
 typedef struct GBackground
