@@ -8,7 +8,7 @@
 #ifndef g_clock_h_
 #define g_clock_h_
 
-#include <r4/r4.h>
+//#include <r4/r4.h>
 #include <r4/src/core/r_random.h>
 #include <r4/src/core/r_time.h>
 

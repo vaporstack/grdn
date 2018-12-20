@@ -152,6 +152,10 @@ static void g_area_update_body(GArea* area, GEntity* ent)
 
 static void g_area_update_entity(GArea* area, GEntity* ent)
 {
+	if ( !ent->name )
+	{
+		printf("UNNAMED entity!\n");
+	}
 	if (0 == strcmp(ent->name, "player"))
 	{
 		//printf("asdf");

@@ -34,9 +34,10 @@ void grdn_dialognode_draw(GDialogNode* node)
 	if (!dlog->text)
 	{
 		printf("No text!\n");
-		drw_type_hpvec_draw("FAiL");
+		drw_type_draw("FAiL");
 		return;
 	}
+	
 	const char* text = dlog->text[dlog->cur];
 
 	drw_type_draw(text);
