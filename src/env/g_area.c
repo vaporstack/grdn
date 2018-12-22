@@ -155,12 +155,13 @@ static void g_area_update_entity(GArea* area, GEntity* ent)
 	if ( !ent->name )
 	{
 		printf("UNNAMED entity!\n");
+		
+	}else{
+		if (0 == strcmp(ent->name, "player"))
+		{
+			//printf("asdf");
+		}
 	}
-	if (0 == strcmp(ent->name, "player"))
-	{
-		//printf("asdf");
-	}
-
 	if (ent->think)
 	{
 		g_think_update(ent->think);
