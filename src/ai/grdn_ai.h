@@ -22,5 +22,6 @@ typedef struct GAi
 
 GAi* grdn_ai_create(GEntity* ent);
 void grdn_ai_destroy(GAi* ai);
+void grdn_ai_update(GAi* ai);
 
 #endif /* grdn_ai_h */

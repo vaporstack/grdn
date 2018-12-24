@@ -17,6 +17,7 @@ typedef void(*g_think_func)(GEntity*);
 typedef struct GThinker
 {
 	unsigned foo;
+	g_think_func select_target;
 	
 }GThinker;
 

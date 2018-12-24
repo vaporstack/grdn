@@ -368,8 +368,8 @@
 				577469F721CE28B400B0DCD8 /* grdn_ai_sensor.h */,
 				577469FC21CE29D300B0DCD8 /* grdn_ai_thinker.c */,
 				577469FB21CE29D300B0DCD8 /* grdn_ai_thinker.h */,
-				57746A0721CE2C5F00B0DCD8 /* grdn_ai_timer.h */,
 				57746A0821CE2C5F00B0DCD8 /* grdn_ai_timer.c */,
+				57746A0721CE2C5F00B0DCD8 /* grdn_ai_timer.h */,
 				57746A0421CE2ABE00B0DCD8 /* grdn_ai.c */,
 				57746A0321CE2ABE00B0DCD8 /* grdn_ai.h */,
 			);
