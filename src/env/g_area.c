@@ -152,11 +152,12 @@ static void g_area_update_body(GArea* area, GEntity* ent)
 
 static void g_area_update_entity(GArea* area, GEntity* ent)
 {
-	if ( !ent->name )
+	if (!ent->name)
 	{
 		printf("UNNAMED entity!\n");
-		
-	}else{
+	}
+	else
+	{
 		if (0 == strcmp(ent->name, "player"))
 		{
 			//printf("asdf");
@@ -222,7 +223,36 @@ void g_area_draw_debug(GArea* area)
 	drw_rect_w(area->bounds);
 }
 
-void g_area_draw(GArea* area)
+static void g_area_draw_entity(GEntity* entity)
+{
+
+	//	someone overrode the draw routine, they know what they're doing (maybe), do it and move on
+	if (entity->draw)
+	{
+		entity->draw(entity);
+		return;
+	}
+
+	RObject* art = entity->art;
+	if (art)
+	{
+		drw_robject(art);
+	}
+	else
+	{
+
+		drw_push();
+		drw_gtransform_apply(entity->transform);
+		drw_square(32);
+		/*drw_translate2f(obj->transform.position[0],
+				      obj->transform.position[1]);
+                         			drw_square(32);
+			*/
+		drw_pop();
+	}
+}
+
+static void g_area_draw_naive(GArea* area)
 {
 
 	for (int i = 0; i < area->num_entities; ++i)
@@ -230,49 +260,123 @@ void g_area_draw(GArea* area)
 		GEntity* obj = area->entities[i];
 		if (obj == NULL)
 		{
+			grdn_log("warning: tried to draw NULL entity?");
 			continue;
 		}
-		RObject* art = obj->art;
-		if (art)
-		{
-			drw_robject(art);
-		}
-		else
-		{
 
-			drw_push();
-			drw_gtransform_apply(obj->transform);
-			drw_square(32);
-			/*drw_translate2f(obj->transform.position[0],
-				      obj->transform.position[1]);
-                         			drw_square(32);
-			*/
-			drw_pop();
-		}
-
-		/*
-		 if (app_settings.debug)
-		{
-			drw_line(0, 0, obj->transform.position[0], obj->transform.position[1]);
-
-			drw_push();
-			drw_gtransform_apply(obj->transform);
-			drw_type_draw(obj->name);
-
-			drw_axis();
-
-			drw_pop();
-		}
-		 */
-
-		// free(obj);
-		// area->entities[i] = NULL;
+		g_area_draw_entity(obj);
 	}
+}
 
-	//if (app_settings.debug)
+static void calculate_layerindex(GArea* area)
+{
+}
 
+static int comp_i(const void* elem1, const void* elem2)
+{
+	double f = *((int*)elem1);
+	double s = *((int*)elem2);
+	if (f > s)
+		return 1;
+	if (f < s)
+		return -1;
+	return 0;
+}
+
+static void tmp_qsort_i(int* data, int num)
+{
+	qsort(data, num, sizeof(data[0]), comp_i);
+}
+
+void g_area_draw_layered(GArea* area)
+{
+
+	//	todo: this is incredibly naive atm, count them all, sort the indexes, iterate once
+	//	per index (slow!) should pack them into a single iteration maybe, or maybe that takes
+	//	just as long lol
+
+	int* layers = NULL;
+	//GEntity*** index  = NULL;
+
+	GEntity** entities = area->entities;
+	int       num      = area->num_entities;
+
+	//	store available layers in a list.
+	int nlayers = 0;
+	for (int i = 0; i < num; i++)
+	{
+		GEntity* ent   = entities[i];
+		int      layer = ent->layer;
+		if (!layers)
+		{
+			nlayers++;
+			layers    = calloc(1, sizeof(int));
+			layers[0] = layer;
+			printf("First layer: %d\n", layer);
+			continue;
+		}
+		bool in_index = false;
+		for (int j = 0; j < nlayers; j++)
+		{
+			int tl = layers[j];
+			if (tl == layer)
+			{
+				in_index = true;
+			}
+		}
+		if (!in_index)
+		{
+			nlayers++;
+			layers		    = realloc(layers, sizeof(int));
+			layers[nlayers - 1] = layer;
+			printf("Unique layer: %d\n", layer);
+		}
+	}
+	printf("Counted %d layers.\n", nlayers);
+	tmp_qsort_i(layers, nlayers);
+	for (int i = 0; i < nlayers; i++)
+	{
+		printf("%d, ", layers[i]);
+	}
+	printf("\n");
+
+	unsigned int w, h;
+	drw_screensize_get(&w, &h);
+	for (int i = 0; i < nlayers; i++)
+	{
+		
+		for (int j = 0; j < num; j++)
+		{
+			if (entities[j]->layer == layers[i])
+			{
+				g_area_draw_entity(entities[j]);
+			}
+		}
+		drw_color(.05,.1,.2,.11);
+		drw_fill_set(true);
+		drw_rect(0,0, w,h);
+		drw_fill_pop();
+		drw_color_pop();
+	}
+	
+	/*
+
+	[layer] [entity, entity]
+	[layer] [entity]
+
+
+
+	*/
+}
+
+void g_area_draw(GArea* area)
+{
+
+	g_area_draw_layered(area);
+	//g_area_draw_naive(area);
 	g_area_draw_debug(area);
 }
+
 #define DEFAULT_AREA_RECT 1024
 
 GArea* g_area_create()
@@ -346,38 +450,38 @@ static unsigned int find_first_available_entity_slot(GArea* area)
 	return -1;
 }
 
-void g_area_register_entity(GArea* area, GEntity* obj)
+void g_area_register_entity(GArea* area, GEntity* ent)
 {
-	if (!obj)
+	if (!ent)
 	{
 		printf("Cowardly refusing to add a NULL entity.");
 		return;
 	}
 
 #ifdef DEBUG
-	if (obj->name == NULL)
+	if (ent->name == NULL)
 	{
 		grdn_log("Sneaky bugger, trying to add an entity with NO NAME");
 	}
 
-	if (is_entity_already_in_system(area, obj))
+	if (is_entity_already_in_system(area, ent))
 	{
 		grdn_log("Entity already in system!");
 	}
-	if (!obj->destroy)
+	if (!ent->destroy)
 	{
-		grdn_log("Warning: added an entity with no destroy callback set");
+		grdn_log("Warning: added an entity with no destroy callback set [%s]", ent->name);
 	}
 #endif
 
 	unsigned int eslot = find_first_available_entity_slot(area);
 	if (eslot != -1)
 	{
-		grdn_log("Simple reusing slot %d | %s", eslot, obj->name);
-		area->entities[eslot] = obj;
+		grdn_log("Simple reusing slot %d | %s", eslot, ent->name);
+		area->entities[eslot] = ent;
 	}
 
-	grdn_log("Adding entity: %d %p %s", area->num_entities, obj, obj->name);
+	grdn_log("Adding entity: %d %p %s", area->num_entities, ent, ent->name);
 	area->num_entities++;
 
 	if (area->entities == NULL)
@@ -390,9 +494,9 @@ void g_area_register_entity(GArea* area, GEntity* obj)
 		area->entities = realloc(area->entities, sizeof(GEntity*) * (area->num_entities + 1));
 	}
 	grdn_log("realloc'd");
-	obj->area = area;
+	ent->area = area;
 	// area->entities = realloc(area->entities,)
-	area->entities[area->num_entities - 1] = obj;
+	area->entities[area->num_entities - 1] = ent;
 }
 
 void g_area_unregister_entity(GArea* area, GEntity* obj)

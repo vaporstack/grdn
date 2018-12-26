@@ -12,6 +12,7 @@ GEntity* g_player_create(const char* name)
 {
 	GPlayer* rec = calloc(1, sizeof(GPlayer));
 	GEntity* ent = g_entity_create(name);
+	ent->layer   = 0;
 	ent->data    = rec;
 	return ent;
 }

@@ -20,8 +20,7 @@
 
 typedef void (*grdn_action_function)(void* actor, void* target);
 
-typedef enum
-{
+typedef enum {
 	G_ENTITY_SCENERY  = 0x01,
 	G_ENTITY_ENEMY    = 0x02,
 	G_ENTITY_INTERACT = 0x04,
@@ -43,9 +42,7 @@ typedef struct GEntity
 	void (*update)(struct GEntity* ent);
 	void (*destroy)(struct GEntity* ent); //	callback for destroying any custom data
 
-	//void (*think)(struct GEntity* ent);
 	void* think;
-	//double think_interval;
 
 	RObject* art;
 
@@ -54,25 +51,29 @@ typedef struct GEntity
 
 	//unsigned int	  num_interactions;
 	//grdn_action_function* available_interactions;
-
-	int flags;
+	signed int layer;
+	double draw_priority;
+	
+	int	flags;
 	// WSequence* seq;
 	GBody* body;
 	void*  brain;
 	void*  data;
 	void*  inventory;
 	void*  weapons;
-	int 	num_subscriptions;
+	int    num_subscriptions;
 	int*   subscription_indexes;
-	void  (**subscriptions)(void* sender, struct GEntity* receiver);
-	
+	void (**subscriptions)(void* sender, struct GEntity* receiver);
+
 	void* action_mgr;
-	GNode  node;
+	GNode node;
 	// bool       grounded;
 	GTransform transform;
 	// int think_interval;
 	void* area;
 } GEntity;
+
+typedef void (*grdn_entity_draw_function)(struct GEntity*);
 
 typedef struct GEntityHnd
 {

@@ -8,6 +8,10 @@
 #ifndef g_transform_h_
 #define g_transform_h_
 
+//
+//	todo; we are deprecating this in favor of CTransform (libcoer)
+//
+
 #include <deps/gl-matrix/gl-matrix.h>
 
 typedef struct GTransform

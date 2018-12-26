@@ -11,8 +11,6 @@
 #include "../ent/g_entity.h"
 #include <stdio.h>
 
-
-
 typedef struct GArea
 {
 	double    gravity;
@@ -20,7 +18,7 @@ typedef struct GArea
 	double    flr;
 	GEntity** entities;
 	int       num_entities;
-	WRect	  bounds;
+	WRect     bounds;
 } GArea;
 
 GArea* g_area_create(void);
@@ -42,5 +40,6 @@ void g_area_update(GArea*);
 void g_area_draw(GArea*);
 
 void g_area_draw_debug(GArea* area);
+void g_area_notify_layerchanged(GArea* area);
 
 #endif

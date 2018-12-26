@@ -10,8 +10,8 @@
 
 #include <deps/gl-matrix/gl-matrix.h>
 
-#include "g_think.h"
 #include "../util/grdn_log.h"
+#include "g_think.h"
 #include <stdlib.h>
 
 GEntity* g_entity_create(const char* name)
@@ -29,8 +29,9 @@ GEntity* g_entity_create(const char* name)
 	 ent->inventory = NULL;
 	 //ent->pos = vec3_create(NULL);
 	 */
-	ent->dir  = 1;
-	ent->data = NULL;
+	ent->layer = 0;
+	ent->dir   = 1;
+	ent->data  = NULL;
 	g_transform_create(&ent->transform);
 	// ent->pos     = vec3_create(NULL);
 	ent->vel     = vec3_create(NULL);
@@ -49,8 +50,8 @@ GEntity* g_entity_create(const char* name)
 	//ent->num_actions	    = 0;
 	//ent->available_interactions = NULL;
 	//ent->num_interactions       = 0;
-	
-	ent->subscriptions	  = NULL;
+
+	ent->subscriptions = NULL;
 
 	// g_transform_create(&ent->node.transform);
 	/*vec3_t test = ent->node.transform.position;
@@ -96,10 +97,11 @@ void g_entity_destroy(GEntity* ent)
 
 	g_transform_destroy(&ent->transform);
 
-	if ( ent->destroy )
+	if (ent->destroy)
 	{
 		ent->destroy(ent);
-	}else
+	}
+	else
 	{
 		grdn_log("No destroy callback for : %s", ent->name);
 	}
@@ -108,8 +110,7 @@ void g_entity_destroy(GEntity* ent)
 	free(ent->vel_max);
 	if (ent->body)
 		free(ent->body);
-	
-	
+
 	free(ent);
 }
 
