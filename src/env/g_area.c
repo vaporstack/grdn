@@ -13,6 +13,8 @@
 #include <grdn/grdn.h>
 #include <r4/src/geo/r_object.h>
 #include <stdlib.h>
+//#include <grdn/src/util/grdn_sort.h>
+#include <coer/src/util/coer_sort.h>
 
 //extern AppExtensions app_extensions;
 //extern AppSettings app_settings;
@@ -252,6 +254,10 @@ static void g_area_draw_entity(GEntity* entity)
 	}
 }
 
+//
+//	this is named as such because it simply draws the entities in the order
+//	they were _added_ to the system, which is kinda dumb.
+//
 static void g_area_draw_naive(GArea* area)
 {
 
@@ -272,21 +278,8 @@ static void calculate_layerindex(GArea* area)
 {
 }
 
-static int comp_i(const void* elem1, const void* elem2)
-{
-	double f = *((int*)elem1);
-	double s = *((int*)elem2);
-	if (f > s)
-		return 1;
-	if (f < s)
-		return -1;
-	return 0;
-}
 
-static void tmp_qsort_i(int* data, int num)
-{
-	qsort(data, num, sizeof(data[0]), comp_i);
-}
+#define TMP_TEST_SORT
 
 void g_area_draw_layered(GArea* area)
 {
@@ -296,7 +289,6 @@ void g_area_draw_layered(GArea* area)
 	//	just as long lol
 
 	int* layers = NULL;
-	//GEntity*** index  = NULL;
 
 	GEntity** entities = area->entities;
 	int       num      = area->num_entities;
@@ -312,7 +304,9 @@ void g_area_draw_layered(GArea* area)
 			nlayers++;
 			layers    = calloc(1, sizeof(int));
 			layers[0] = layer;
+#ifdef TMP_TEST_SORT
 			printf("First layer: %d\n", layer);
+#endif
 			continue;
 		}
 		bool in_index = false;
@@ -322,6 +316,7 @@ void g_area_draw_layered(GArea* area)
 			if (tl == layer)
 			{
 				in_index = true;
+				break;
 			}
 		}
 		if (!in_index)
@@ -329,16 +324,21 @@ void g_area_draw_layered(GArea* area)
 			nlayers++;
 			layers		    = realloc(layers, sizeof(int));
 			layers[nlayers - 1] = layer;
-			printf("Unique layer: %d\n", layer);
+#ifdef TMP_TEST_SORT
+	printf("Unique layer: %d\n", layer);
+#endif
 		}
 	}
+	coer_sort_i(layers, nlayers);
+
+#ifdef TMP_TEST_SORT
 	printf("Counted %d layers.\n", nlayers);
-	tmp_qsort_i(layers, nlayers);
 	for (int i = 0; i < nlayers; i++)
 	{
 		printf("%d, ", layers[i]);
 	}
 	printf("\n");
+#endif
 
 	unsigned int w, h;
 	drw_screensize_get(&w, &h);
@@ -359,14 +359,8 @@ void g_area_draw_layered(GArea* area)
 		drw_color_pop();
 	}
 	
-	/*
+	free(layers);
 
-	[layer] [entity, entity]
-	[layer] [entity]
-
-
-
-	*/
 }
 
 void g_area_draw(GArea* area)
@@ -387,7 +381,7 @@ GArea* g_area_create()
 	area->friction     = 1. - .01;
 	area->gravity      = -.1;
 	area->flr	  = -.5;
-	g_area_populate_placeholder(area);
+	//g_area_populate_placeholder(area);
 	wsh_rect_reset(&area->bounds);
 	area->bounds.pos.x  = -DEFAULT_AREA_RECT * .5;
 	area->bounds.pos.y  = -DEFAULT_AREA_RECT * .5;
@@ -417,7 +411,7 @@ void g_area_destroy(GArea* area)
 	}
 	free(area);
 }
-
+/*
 void g_area_populate_placeholder(GArea* area)
 {
 	for (int i = 0; i < 3; ++i)
@@ -427,7 +421,7 @@ void g_area_populate_placeholder(GArea* area)
 		g_area_register_entity(area, obj);
 	}
 }
-
+*/
 #ifdef DEBUG
 static bool is_entity_already_in_system(GArea* area, GEntity* entity)
 {

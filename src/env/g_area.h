@@ -24,7 +24,7 @@ typedef struct GArea
 GArea* g_area_create(void);
 void   g_area_destroy(GArea*);
 
-void g_area_populate_placeholder(GArea*);
+//void g_area_populate_placeholder(GArea*);
 
 void g_area_register_entity(GArea*, GEntity*);
 void g_area_unregister_entity(GArea*, GEntity*);
