@@ -29,11 +29,11 @@ void grdn_action_mgr_add(GActionMgr* mgr, entity_action action)
 	if ( mgr->num == 0 )
 	{
 		mgr->num++;
-		mgr->actions = calloc(1, sizeof(grdn_action_function));
+		mgr->actions = calloc(1, sizeof(entity_action*));
 		mgr->actions[0] = &action;
 	}else{
 		mgr->num++;
-		mgr->actions = realloc(mgr->actions, mgr->num * sizeof(grdn_action_function));
+		mgr->actions = realloc(mgr->actions, mgr->num * sizeof(entity_action*));
 		mgr->actions[mgr->num - 1] = &action;
 		
 	}
