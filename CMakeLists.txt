@@ -64,6 +64,8 @@ if(${OperatingSystem} MATCHES "windows")
 	target_link_libraries(${project_name} cairo pixman png )
 endif()
 
+link_directories(test_grdn PUBLIC ${contrib_lib_dir} /usr/lib/arm-linux-gnueabihf)
+
 
 target_include_directories (grdn PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..)
 target_include_directories (grdn PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../../contrib/include)
