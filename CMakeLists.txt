@@ -22,7 +22,7 @@ endmacro(use_c99)
 use_c99()
 
 option(BuildLibrary "Build the brush library for embedding or linking" ON)
-option(BuildTest "BuildTest" OFF)
+option(BuildTest "BuildTest" ON)
 option(BuildDocumentation "BuildDocumentation" OFF)
 
 if(${BuildTest})
