@@ -25,9 +25,9 @@ option(BuildLibrary "Build the brush library for embedding or linking" ON)
 option(BuildTest "BuildTest" ON)
 option(BuildDocumentation "BuildDocumentation" OFF)
 
-if(${BuildTest})
-  add_subdirectory("test")
-endif()
+#if(${BuildTest})
+#  add_subdirectory("test")
+#endif()
 
 
 
