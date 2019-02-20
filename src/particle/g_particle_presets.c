@@ -23,7 +23,7 @@ void g_particlesystem_preset_dust(ParticleSystem* sys)
 	g_particlesystem_set_bounds(sys, 512, 512, 512);
 	sys->bound_type     = PARTICLE_BOUND_SPHERE;
 	sys->emit_type      = PARTICLE_EMIT_SPHERE_VOL;
-	sys->boundrw_sphere = 512;
+	sys->bound_sphere = 512;
 	sys->emit_rad       = 512;
 	sys->emitting       = true;
 	g_particlesystem_set_air(sys, 1, 1, 1);
@@ -45,7 +45,7 @@ void g_particlesystem_preset_rain(ParticleSystem* sys)
 	g_particlesystem_set_bounds(sys, 512, 512, 512);
 	sys->bound_type     = PARTICLE_BOUND_SPHERE;
 	sys->emit_type      = PARTICLE_EMIT_SPHERE_VOL;
-	sys->boundrw_sphere = 512;
+	sys->bound_sphere = 512;
 	sys->emit_rad       = 512;
 	sys->emitting       = true;
 	g_particlesystem_set_air(sys, 1, 1, 1);
