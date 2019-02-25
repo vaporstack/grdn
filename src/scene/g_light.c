@@ -24,6 +24,7 @@ static void update_point(GEntity* ent)
 
 static void draw_point(GEntity* ent)
 {
+	drw_color(1,0,1,1);
 	drw_push();
 	drw_translate(ent->transform.position[0], ent->transform.position[1], ent->transform.position[2]);
 	GLight* light = ent->data;
@@ -89,19 +90,25 @@ GEntity* g_light_create(unsigned int type)
 	switch (type)
 	{
 	case GRDN_LIGHT_TYPE_POINT:
+			ent->name = "point_light";
 		ent->draw   = draw_point;
 		ent->update = update_point;
 		setup_point(light);
 		break;
 	case GRDN_LIGHT_TYPE_SPOT:
+		ent->name = "spot_light";
 		ent->draw   = draw_spot;
 		ent->update = update_spot;
-
 		break;
+			
 	case GRDN_LIGHT_TYPE_AREA:
+		ent->name = "area_light";
+
 		ent->draw = draw_area;
 		break;
 	case GRDN_LIGHT_TYPE_BEAM:
+		ent->name = "beam_light";
+
 		ent->draw = draw_beam;
 		break;
 	default:
