@@ -41,6 +41,7 @@ typedef struct GLight
 	double     frequency;
 	double     intensity;
 	RLine*     line;
+	double     rotation;
 	RTransform transform;
 } GLight;
 
