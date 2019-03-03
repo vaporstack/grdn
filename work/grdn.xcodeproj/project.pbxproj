@@ -52,6 +52,10 @@
 		57746A0621CE2ABE00B0DCD8 /* grdn_ai.c in Sources */ = {isa = PBXBuildFile; fileRef = 57746A0421CE2ABE00B0DCD8 /* grdn_ai.c */; };
 		57746A0921CE2C5F00B0DCD8 /* grdn_ai_timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 57746A0721CE2C5F00B0DCD8 /* grdn_ai_timer.h */; };
 		57746A0A21CE2C5F00B0DCD8 /* grdn_ai_timer.c in Sources */ = {isa = PBXBuildFile; fileRef = 57746A0821CE2C5F00B0DCD8 /* grdn_ai_timer.c */; };
+		5779F9A9222B899C006DD981 /* grdn_road.h in Headers */ = {isa = PBXBuildFile; fileRef = 5779F9A7222B899C006DD981 /* grdn_road.h */; };
+		5779F9AA222B899C006DD981 /* grdn_road.c in Sources */ = {isa = PBXBuildFile; fileRef = 5779F9A8222B899C006DD981 /* grdn_road.c */; };
+		5779F9AD222B89AC006DD981 /* grdn_city.h in Headers */ = {isa = PBXBuildFile; fileRef = 5779F9AB222B89AC006DD981 /* grdn_city.h */; };
+		5779F9AE222B89AC006DD981 /* grdn_city.c in Sources */ = {isa = PBXBuildFile; fileRef = 5779F9AC222B89AC006DD981 /* grdn_city.c */; };
 		578174D91FBA958E00E004F4 /* g_story.h in Headers */ = {isa = PBXBuildFile; fileRef = 578174D71FBA958E00E004F4 /* g_story.h */; };
 		578174DA1FBA958E00E004F4 /* g_story.c in Sources */ = {isa = PBXBuildFile; fileRef = 578174D81FBA958E00E004F4 /* g_story.c */; };
 		5781AFC220868B97003659FD /* g_npc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5781AFC020868B97003659FD /* g_npc.h */; };
@@ -186,6 +190,10 @@
 		57746A0421CE2ABE00B0DCD8 /* grdn_ai.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_ai.c; sourceTree = "<group>"; };
 		57746A0721CE2C5F00B0DCD8 /* grdn_ai_timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_ai_timer.h; sourceTree = "<group>"; };
 		57746A0821CE2C5F00B0DCD8 /* grdn_ai_timer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_ai_timer.c; sourceTree = "<group>"; };
+		5779F9A7222B899C006DD981 /* grdn_road.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_road.h; sourceTree = "<group>"; };
+		5779F9A8222B899C006DD981 /* grdn_road.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_road.c; sourceTree = "<group>"; };
+		5779F9AB222B89AC006DD981 /* grdn_city.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_city.h; sourceTree = "<group>"; };
+		5779F9AC222B89AC006DD981 /* grdn_city.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_city.c; sourceTree = "<group>"; };
 		578174D71FBA958E00E004F4 /* g_story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_story.h; sourceTree = "<group>"; };
 		578174D81FBA958E00E004F4 /* g_story.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_story.c; sourceTree = "<group>"; };
 		5781AFC020868B97003659FD /* g_npc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_npc.h; sourceTree = "<group>"; };
@@ -376,6 +384,17 @@
 			path = ai;
 			sourceTree = "<group>";
 		};
+		5779F9A6222B8991006DD981 /* city */ = {
+			isa = PBXGroup;
+			children = (
+				5779F9A7222B899C006DD981 /* grdn_road.h */,
+				5779F9A8222B899C006DD981 /* grdn_road.c */,
+				5779F9AB222B89AC006DD981 /* grdn_city.h */,
+				5779F9AC222B89AC006DD981 /* grdn_city.c */,
+			);
+			path = city;
+			sourceTree = "<group>";
+		};
 		578174D11FBA955E00E004F4 /* story */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				577469F621CE289D00B0DCD8 /* ai */,
+				5779F9A6222B8991006DD981 /* city */,
 				57B35596206590B900C73A8E /* comp */,
 				5730AF941FE7162700EF5C2F /* core */,
 				578174D11FBA955E00E004F4 /* story */,
@@ -589,8 +609,10 @@
 				5708AA02208FF89800A9E776 /* g_drawable.h in Headers */,
 				57939B5221BF685800F74BF4 /* grdn_entity_typelibrary.h in Headers */,
 				D1E3CCE61F84185F00BA6CE1 /* g_behaviors.h in Headers */,
+				5779F9AD222B89AC006DD981 /* grdn_city.h in Headers */,
 				5781AFC220868B97003659FD /* g_npc.h in Headers */,
 				57D2AFB61FC3BA1200CCAD5C /* g_particle_emitter.h in Headers */,
+				5779F9A9222B899C006DD981 /* grdn_road.h in Headers */,
 				57D2AFBA1FC4848E00CCAD5C /* g_particle_system.h in Headers */,
 				57A0E4421FFF173000923E44 /* g_player.h in Headers */,
 				57B355A1206590BA00C73A8E /* g_jpred.h in Headers */,
@@ -805,6 +827,7 @@
 				57561467218E5D490040B44C /* grdn_dialognode.c in Sources */,
 				57B3559F206590BA00C73A8E /* g_dac.c in Sources */,
 				57FEFCA21FAEAAB100CBCCE7 /* g_node.c in Sources */,
+				5779F9AE222B89AC006DD981 /* grdn_city.c in Sources */,
 				5781AFC320868B97003659FD /* g_npc.c in Sources */,
 				D1E3CCE51F84185F00BA6CE1 /* g_behaviors.c in Sources */,
 				57F8E2BD21290918005614E7 /* g_game.c in Sources */,
@@ -813,6 +836,7 @@
 				57F8E2BE21290C06005614E7 /* g_think.c in Sources */,
 				D1E3CCE11F84185800BA6CE1 /* g_particle_presets.c in Sources */,
 				5797936321632A7C00A0F4DA /* g_particle_flock.c in Sources */,
+				5779F9AA222B899C006DD981 /* grdn_road.c in Sources */,
 				574399EA209F9BAD009A3A06 /* g_entity_manager.c in Sources */,
 				574399E6209F9A3D009A3A06 /* g_extloader.c in Sources */,
 				D1DB87FE1F1434D800BA023B /* g_weather.c in Sources */,
