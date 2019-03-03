@@ -18,6 +18,8 @@ typedef struct GrdnCity
 {
 	unsigned num_features;
 	GrdnRoadNetwork* network;
+	CPoint urban_center;
+	CPoint urban_center_goal;
 }GrdnCity;
 
 #endif /* grdn_city_h */

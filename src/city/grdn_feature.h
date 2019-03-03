@@ -24,6 +24,12 @@ typedef struct GrdnFeature
 	unsigned type;
 }GrdnFeature;
 
+typedef struct GrdnFeatureSet
+{
+	unsigned num;
+	GrdnFeature** data;
+}GrdnFeatureSet;
+
 #include <stdio.h>
 
 #endif /* grdn_feature_h */
