@@ -11,6 +11,13 @@
 
 #include <stdio.h>
 
+#include "grdn_feature.h"
+#include "grdn_road.h"
 
+typedef struct GrdnCity
+{
+	unsigned num_features;
+	GrdnRoadNetwork* network;
+}GrdnCity;
 
 #endif /* grdn_city_h */
