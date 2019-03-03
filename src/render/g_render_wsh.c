@@ -17,7 +17,7 @@ GRenderWsh* g_render_wsh_create(WSequenceHnd* hnd)
 	rec->hnd	    = hnd;
 	rec->pos	    = 0;
 	rec->playing	= true;
-	rec->playback_speed = 1;
+	rec->playback_speed = .3333;
 	return rec;
 
 }

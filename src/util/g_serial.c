@@ -130,6 +130,7 @@ int grdn_write_text_to_file(const char* path, const char* data)
 	}
 	if (!f)
 	{
+		
 		char buf[256];
 		sprintf(buf, "Failed to open file: %s\n", path);
 		printf("%s\n", buf);

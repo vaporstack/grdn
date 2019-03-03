@@ -21,7 +21,7 @@ static GEntity* current_cam = NULL;
 GEntity* g_camera_create(void)
 {
 	GEntity* camera		= g_entity_create("g_camera");
-	GCamera* cdata		= malloc(sizeof(GCamera));
+	GCamera* cdata		= calloc(1, sizeof(GCamera));
 	cdata->shake_enabled    = false;
 	cdata->shake		= vec3_create(NULL);
 	cdata->position		= vec3_create(NULL);

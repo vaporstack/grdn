@@ -21,15 +21,18 @@ endmacro(use_c99)
 
 use_c99()
 
-option(BuildLibrary "Build the brush library for embedding or linking" ON)
-option(BuildTest "BuildTest" OFF)
-option(BuildDocumentation "BuildDocumentation" OFF)
+option(BuildGrdnLibrary "Build the brush library for embedding or linking" ON)
+option(BuildGrdnTest "BuildGrdnTest" ON)
+option(BuildGrdnDemo "BuildDemo" ON)
+option(BuildGrdnDocumentation "BuildGrdnDocumentation" OFF)
 
-if(${BuildTest})
-  add_subdirectory("test")
+#if(${BuildGrdnTest})
+#  add_subdirectory("test")
+#endif()
+
+if(${BuildGrdnDemo})
+	add_subdirectory("demo")
 endif()
-
-
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 	 SET(OperatingSystem "macos")
@@ -63,6 +66,8 @@ endif()
 if(${OperatingSystem} MATCHES "windows")
 	target_link_libraries(${project_name} cairo pixman png )
 endif()
+
+link_directories(test_grdn PUBLIC ${contrib_lib_dir} /usr/lib/arm-linux-gnueabihf)
 
 
 target_include_directories (grdn PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..)

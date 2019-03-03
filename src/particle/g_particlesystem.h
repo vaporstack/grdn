@@ -88,7 +88,7 @@ typedef struct ParticleSystem
 	vec3_t air;
 
 	vec3_t bounds;
-	double boundrw_sphere;
+	double bound_sphere;
 
 	vec3_t emit_pos;
 	vec3_t emit_box;

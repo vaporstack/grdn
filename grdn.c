@@ -19,7 +19,10 @@ void grdn_deinit(void)
 
 int grdn_check_version_match(const char* str)
 {
-	return (0 == strcmp(grdn_get_version_string(), str));
+	char* version =grdn_get_version_string();
+	int matches = (0 == strcmp(version, str));
+	free(version);
+	return matches;
 }
 
 char* grdn_get_version_string(void)

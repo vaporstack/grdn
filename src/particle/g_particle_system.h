@@ -136,7 +136,7 @@ void g_particle_system_draw_debug(GParticleSystem* sys);
 	vec3_t air;
 
 	vec3_t bounds;
-	double boundrw_sphere;
+	double bound_sphere;
 
 	vec3_t emit_pos;
 	vec3_t emit_box;

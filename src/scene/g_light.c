@@ -15,29 +15,34 @@ static void update_common(GLight* light)
 }
 
 #pragma mark point
-static void update_point(GEntity* ent)
+static void  update_point(GEntity* ent)
 {
 	GLight* light = ent->data;
 
 	light->cur_radius = light->base_radius;
 }
-
-static void draw_point(GEntity* ent)
+static void render_light_singleton(GEntity* ent)
 {
-	drw_push();
-	drw_translate(ent->transform.position[0], ent->transform.position[1], ent->transform.position[2]);
+	drw_color(1, 0, 1, 1);
 	GLight* light = ent->data;
 	double  rad   = light->base_radius;
+	drw_color(1, 0, 1, 1);
+
 	drw_circle_precision_set(18);
 	drw_fill_set(true);
 	drw_circle(rad);
 	drw_fill_pop();
-
+}
+static void draw_point(GEntity* ent)
+{
+	drw_push();
+	drw_translate(ent->transform.position[0], ent->transform.position[1], ent->transform.position[2]);
+	render_light_singleton(ent);
 	drw_pop();
 }
 
 #pragma mark spot
-static void update_spot(GEntity* ent)
+static void  update_spot(GEntity* ent)
 {
 }
 
@@ -63,6 +68,13 @@ static void update_beam(GEntity* ent)
 }
 static void draw_beam(GEntity* ent)
 {
+	drw_push();
+	drw_translate(ent->transform.position[0], ent->transform.position[1], ent->transform.position[2]);
+	GLight* light = ent->data;
+	drw_scale(100, 1, 1);
+	drw_rotate_z(light->rotation);
+	render_light_singleton(ent);
+	drw_pop();
 }
 static void setup_point(GLight* light)
 {
@@ -85,23 +97,28 @@ GEntity* g_light_create(unsigned int type)
 	GRDN_LIGHT_TYPE_NONE
 	*/
 	ent->update = g_light_update;
-	ent->layer = -1;
+	ent->layer  = -1;
 	switch (type)
 	{
 	case GRDN_LIGHT_TYPE_POINT:
+		ent->name   = "point_light";
 		ent->draw   = draw_point;
 		ent->update = update_point;
 		setup_point(light);
 		break;
 	case GRDN_LIGHT_TYPE_SPOT:
+		ent->name   = "spot_light";
 		ent->draw   = draw_spot;
 		ent->update = update_spot;
-
 		break;
+
 	case GRDN_LIGHT_TYPE_AREA:
+		ent->name = "area_light";
+
 		ent->draw = draw_area;
 		break;
 	case GRDN_LIGHT_TYPE_BEAM:
+		ent->name = "beam_light";
 		ent->draw = draw_beam;
 		break;
 	default:

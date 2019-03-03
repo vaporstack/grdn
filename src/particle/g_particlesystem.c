@@ -52,7 +52,7 @@ ParticleSystem* g_particlesystem_create(int max)
 	sys->gravity				= vec3_create(NULL);
 	sys->bounds				= vec3_create(NULL);
 	sys->bounds[0] = sys->bounds[1] = sys->bounds[2] = BOUNDS;
-	sys->boundrw_sphere				 = BOUNDS;
+	sys->bound_sphere				 = BOUNDS;
 	sys->emit_pos					 = vec3_create(NULL);
 	sys->emit_box					 = vec3_create(NULL);
 	sys->emitter					 = NULL;
@@ -109,8 +109,8 @@ void g_particlesystem_destroy(ParticleSystem* sys)
 	sys = NULL;
 }
 
-#include <vbl/vbl.h>
-
+//#include <vbl/vbl.h>
+#include <vbl/src/core/vbl_rng.h>
 
 void g_particlesystem_update(ParticleSystem* sys)
 {
@@ -224,7 +224,7 @@ void g_particlesystem_update(ParticleSystem* sys)
 		else if (sys->bound_type == PARTICLE_BOUND_SPHERE)
 		{
 			double dist = vec3_dist(p->position, sys->emit_pos);
-			if (dist > sys->boundrw_sphere)
+			if (dist > sys->bound_sphere)
 			{
 				g_particlesystem_bounds_check(sys, p);
 			}
