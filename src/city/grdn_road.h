@@ -12,14 +12,22 @@
 #include <coer/coer.h>
 #include <stdio.h>
 
+typedef struct GrdnRoadConnection
+{
+	void*  a;
+	void*  b;
+	CPoint loc_a;
+	CPoint loc_b;
+} GrdnRoadConnection;
+
 typedef struct GrdnRoad
 {
-	double		  len;
-	double		  dir;
-	CPoint		  a;
-	CPoint		  b;
-	struct GrdnRoad** connections;
-	unsigned	  connection_num;
+	double			    len;
+	double			    dir;
+	CPoint			    a;
+	CPoint			    b;
+	struct GrdnRoadConnection** connections;
+	unsigned		    connection_num;
 } GrdnRoad;
 
 typedef struct GrdnRoadNetwork

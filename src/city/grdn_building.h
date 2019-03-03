@@ -9,6 +9,11 @@
 #ifndef grdn_building_h
 #define grdn_building_h
 
-#include <stdio.h>
+typedef struct GrdnBuilding
+{
+	unsigned int door_id;
+	double       height;
+
+} GrdnBuilding;
 
 #endif /* grdn_building_h */

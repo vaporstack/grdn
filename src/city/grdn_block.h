@@ -9,6 +9,14 @@
 #ifndef grdn_block_h
 #define grdn_block_h
 
-#include <stdio.h>
+#include "grdn_building.h"
+#include "grdn_road.h"
+
+typedef struct GrdnBlock
+{
+	GrdnRoad**    boundaries;
+	unsigned      num_boundaries;
+	GrdnBuilding* buildings;
+} GrdnBlock;
 
 #endif /* grdn_block_h */

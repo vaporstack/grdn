@@ -62,6 +62,8 @@
 		5779F9B6222B8B20006DD981 /* grdn_block.c in Sources */ = {isa = PBXBuildFile; fileRef = 5779F9B4222B8B20006DD981 /* grdn_block.c */; };
 		5779F9B9222B8B39006DD981 /* grdn_feature.h in Headers */ = {isa = PBXBuildFile; fileRef = 5779F9B7222B8B39006DD981 /* grdn_feature.h */; };
 		5779F9BA222B8B39006DD981 /* grdn_feature.c in Sources */ = {isa = PBXBuildFile; fileRef = 5779F9B8222B8B39006DD981 /* grdn_feature.c */; };
+		5779F9BD222B8CE0006DD981 /* grdn_route.h in Headers */ = {isa = PBXBuildFile; fileRef = 5779F9BB222B8CE0006DD981 /* grdn_route.h */; };
+		5779F9BE222B8CE0006DD981 /* grdn_route.c in Sources */ = {isa = PBXBuildFile; fileRef = 5779F9BC222B8CE0006DD981 /* grdn_route.c */; };
 		578174D91FBA958E00E004F4 /* g_story.h in Headers */ = {isa = PBXBuildFile; fileRef = 578174D71FBA958E00E004F4 /* g_story.h */; };
 		578174DA1FBA958E00E004F4 /* g_story.c in Sources */ = {isa = PBXBuildFile; fileRef = 578174D81FBA958E00E004F4 /* g_story.c */; };
 		5781AFC220868B97003659FD /* g_npc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5781AFC020868B97003659FD /* g_npc.h */; };
@@ -206,6 +208,8 @@
 		5779F9B4222B8B20006DD981 /* grdn_block.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_block.c; sourceTree = "<group>"; };
 		5779F9B7222B8B39006DD981 /* grdn_feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_feature.h; sourceTree = "<group>"; };
 		5779F9B8222B8B39006DD981 /* grdn_feature.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_feature.c; sourceTree = "<group>"; };
+		5779F9BB222B8CE0006DD981 /* grdn_route.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_route.h; sourceTree = "<group>"; };
+		5779F9BC222B8CE0006DD981 /* grdn_route.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_route.c; sourceTree = "<group>"; };
 		578174D71FBA958E00E004F4 /* g_story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_story.h; sourceTree = "<group>"; };
 		578174D81FBA958E00E004F4 /* g_story.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_story.c; sourceTree = "<group>"; };
 		5781AFC020868B97003659FD /* g_npc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_npc.h; sourceTree = "<group>"; };
@@ -409,6 +413,8 @@
 				5779F9B7222B8B39006DD981 /* grdn_feature.h */,
 				5779F9A8222B899C006DD981 /* grdn_road.c */,
 				5779F9A7222B899C006DD981 /* grdn_road.h */,
+				5779F9BC222B8CE0006DD981 /* grdn_route.c */,
+				5779F9BB222B8CE0006DD981 /* grdn_route.h */,
 			);
 			path = city;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 				57746A0521CE2ABE00B0DCD8 /* grdn_ai.h in Headers */,
 				5797936221632A7C00A0F4DA /* g_particle_flock.h in Headers */,
 				57CE907D20BE4447004D69E7 /* grdn_physics.h in Headers */,
+				5779F9BD222B8CE0006DD981 /* grdn_route.h in Headers */,
 				D1DB88031F1434E100BA023B /* grdn.h in Headers */,
 				57746A0121CE2A6900B0DCD8 /* grdn_ai_actor.h in Headers */,
 				D154FF4C1FC4D68300AE014F /* g_particle_affector.h in Headers */,
@@ -861,6 +868,7 @@
 				D1E3CCE11F84185800BA6CE1 /* g_particle_presets.c in Sources */,
 				5797936321632A7C00A0F4DA /* g_particle_flock.c in Sources */,
 				5779F9AA222B899C006DD981 /* grdn_road.c in Sources */,
+				5779F9BE222B8CE0006DD981 /* grdn_route.c in Sources */,
 				574399EA209F9BAD009A3A06 /* g_entity_manager.c in Sources */,
 				574399E6209F9A3D009A3A06 /* g_extloader.c in Sources */,
 				D1DB87FE1F1434D800BA023B /* g_weather.c in Sources */,
