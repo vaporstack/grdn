@@ -64,6 +64,8 @@
 		5779F9BA222B8B39006DD981 /* grdn_feature.c in Sources */ = {isa = PBXBuildFile; fileRef = 5779F9B8222B8B39006DD981 /* grdn_feature.c */; };
 		5779F9BD222B8CE0006DD981 /* grdn_route.h in Headers */ = {isa = PBXBuildFile; fileRef = 5779F9BB222B8CE0006DD981 /* grdn_route.h */; };
 		5779F9BE222B8CE0006DD981 /* grdn_route.c in Sources */ = {isa = PBXBuildFile; fileRef = 5779F9BC222B8CE0006DD981 /* grdn_route.c */; };
+		5779F9CB222B98F9006DD981 /* grdn_biome.h in Headers */ = {isa = PBXBuildFile; fileRef = 5779F9C9222B98F9006DD981 /* grdn_biome.h */; };
+		5779F9CC222B98F9006DD981 /* grdn_biome.c in Sources */ = {isa = PBXBuildFile; fileRef = 5779F9CA222B98F9006DD981 /* grdn_biome.c */; };
 		578174D91FBA958E00E004F4 /* g_story.h in Headers */ = {isa = PBXBuildFile; fileRef = 578174D71FBA958E00E004F4 /* g_story.h */; };
 		578174DA1FBA958E00E004F4 /* g_story.c in Sources */ = {isa = PBXBuildFile; fileRef = 578174D81FBA958E00E004F4 /* g_story.c */; };
 		5781AFC220868B97003659FD /* g_npc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5781AFC020868B97003659FD /* g_npc.h */; };
@@ -210,6 +212,8 @@
 		5779F9B8222B8B39006DD981 /* grdn_feature.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_feature.c; sourceTree = "<group>"; };
 		5779F9BB222B8CE0006DD981 /* grdn_route.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_route.h; sourceTree = "<group>"; };
 		5779F9BC222B8CE0006DD981 /* grdn_route.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_route.c; sourceTree = "<group>"; };
+		5779F9C9222B98F9006DD981 /* grdn_biome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_biome.h; sourceTree = "<group>"; };
+		5779F9CA222B98F9006DD981 /* grdn_biome.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_biome.c; sourceTree = "<group>"; };
 		578174D71FBA958E00E004F4 /* g_story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_story.h; sourceTree = "<group>"; };
 		578174D81FBA958E00E004F4 /* g_story.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_story.c; sourceTree = "<group>"; };
 		5781AFC020868B97003659FD /* g_npc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_npc.h; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 				5779F9AB222B89AC006DD981 /* grdn_city.h */,
 				5779F9B8222B8B39006DD981 /* grdn_feature.c */,
 				5779F9B7222B8B39006DD981 /* grdn_feature.h */,
+				5779F9C9222B98F9006DD981 /* grdn_biome.h */,
+				5779F9CA222B98F9006DD981 /* grdn_biome.c */,
 				5779F9A8222B899C006DD981 /* grdn_road.c */,
 				5779F9A7222B899C006DD981 /* grdn_road.h */,
 				5779F9BC222B8CE0006DD981 /* grdn_route.c */,
@@ -669,6 +675,7 @@
 				D1E733791E95B93E0027A570 /* g_dialog.h in Headers */,
 				D1E7337F1E95B93E0027A570 /* g_world.h in Headers */,
 				57561466218E5D490040B44C /* grdn_dialognode.h in Headers */,
+				5779F9CB222B98F9006DD981 /* grdn_biome.h in Headers */,
 				57746A0921CE2C5F00B0DCD8 /* grdn_ai_timer.h in Headers */,
 				D1E733771E95B93E0027A570 /* g_clock.h in Headers */,
 				D1DB87F41F1434D800BA023B /* g_background.h in Headers */,
@@ -862,6 +869,7 @@
 				5781AFC320868B97003659FD /* g_npc.c in Sources */,
 				D1E3CCE51F84185F00BA6CE1 /* g_behaviors.c in Sources */,
 				57F8E2BD21290918005614E7 /* g_game.c in Sources */,
+				5779F9CC222B98F9006DD981 /* grdn_biome.c in Sources */,
 				577469FA21CE28B400B0DCD8 /* grdn_ai_sensor.c in Sources */,
 				D1E733761E95B93E0027A570 /* g_clock.c in Sources */,
 				57F8E2BE21290C06005614E7 /* g_think.c in Sources */,

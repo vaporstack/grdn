@@ -30,6 +30,7 @@ typedef struct GrdnFeatureSet
 	GrdnFeature** data;
 }GrdnFeatureSet;
 
-#include <stdio.h>
+GrdnFeature* grdn_feature_create_river(void);
+GrdnFeature* grdn_feature_create_mountains(void);
 
 #endif /* grdn_feature_h */
