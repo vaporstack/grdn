@@ -74,6 +74,8 @@
 		57939B5321BF685800F74BF4 /* grdn_entity_typelibrary.c in Sources */ = {isa = PBXBuildFile; fileRef = 57939B5121BF685800F74BF4 /* grdn_entity_typelibrary.c */; };
 		5797936221632A7C00A0F4DA /* g_particle_flock.h in Headers */ = {isa = PBXBuildFile; fileRef = 5797936021632A7C00A0F4DA /* g_particle_flock.h */; };
 		5797936321632A7C00A0F4DA /* g_particle_flock.c in Sources */ = {isa = PBXBuildFile; fileRef = 5797936121632A7C00A0F4DA /* g_particle_flock.c */; };
+		579F9BBA2236274A00BF3880 /* grdn_sense_map.h in Headers */ = {isa = PBXBuildFile; fileRef = 579F9BB82236274A00BF3880 /* grdn_sense_map.h */; };
+		579F9BBB2236274A00BF3880 /* grdn_sense_map.c in Sources */ = {isa = PBXBuildFile; fileRef = 579F9BB92236274A00BF3880 /* grdn_sense_map.c */; };
 		57A005551F7398FD003231CC /* g_light.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A005531F7398FD003231CC /* g_light.c */; };
 		57A005561F7398FD003231CC /* g_light.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A005531F7398FD003231CC /* g_light.c */; };
 		57A005571F7398FD003231CC /* g_light.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A005541F7398FD003231CC /* g_light.h */; };
@@ -222,6 +224,8 @@
 		57939B5121BF685800F74BF4 /* grdn_entity_typelibrary.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_entity_typelibrary.c; sourceTree = "<group>"; };
 		5797936021632A7C00A0F4DA /* g_particle_flock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_particle_flock.h; sourceTree = "<group>"; };
 		5797936121632A7C00A0F4DA /* g_particle_flock.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_particle_flock.c; sourceTree = "<group>"; };
+		579F9BB82236274A00BF3880 /* grdn_sense_map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_sense_map.h; sourceTree = "<group>"; };
+		579F9BB92236274A00BF3880 /* grdn_sense_map.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_sense_map.c; sourceTree = "<group>"; };
 		57A004E91F721717003231CC /* g_serial.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_serial.c; sourceTree = "<group>"; };
 		57A004EA1F721717003231CC /* g_serial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_serial.h; sourceTree = "<group>"; };
 		57A005511F7398C8003231CC /* g_think.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_think.c; sourceTree = "<group>"; };
@@ -440,6 +444,15 @@
 			path = story;
 			sourceTree = "<group>";
 		};
+		579F9BB72236273700BF3880 /* sense */ = {
+			isa = PBXGroup;
+			children = (
+				579F9BB82236274A00BF3880 /* grdn_sense_map.h */,
+				579F9BB92236274A00BF3880 /* grdn_sense_map.c */,
+			);
+			path = sense;
+			sourceTree = "<group>";
+		};
 		57A004E81F721717003231CC /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +582,7 @@
 				57D2AF371FC2569700CCAD5C /* lang */,
 				49F9FFA51F61FE0300D5D7B9 /* comp */,
 				57D2AFD51FCB83C500CCAD5C /* render */,
+				579F9BB72236273700BF3880 /* sense */,
 				D1DB87E91F1434D800BA023B /* scene */,
 				57A005501F7398C8003231CC /* ent */,
 				5749516B1E9AC6D900212EAF /* physics */,
@@ -664,6 +678,7 @@
 				57746A0521CE2ABE00B0DCD8 /* grdn_ai.h in Headers */,
 				5797936221632A7C00A0F4DA /* g_particle_flock.h in Headers */,
 				57CE907D20BE4447004D69E7 /* grdn_physics.h in Headers */,
+				579F9BBA2236274A00BF3880 /* grdn_sense_map.h in Headers */,
 				5779F9BD222B8CE0006DD981 /* grdn_route.h in Headers */,
 				D1DB88031F1434E100BA023B /* grdn.h in Headers */,
 				57746A0121CE2A6900B0DCD8 /* grdn_ai_actor.h in Headers */,
@@ -867,6 +882,7 @@
 				57FEFCA21FAEAAB100CBCCE7 /* g_node.c in Sources */,
 				5779F9AE222B89AC006DD981 /* grdn_city.c in Sources */,
 				5781AFC320868B97003659FD /* g_npc.c in Sources */,
+				579F9BBB2236274A00BF3880 /* grdn_sense_map.c in Sources */,
 				D1E3CCE51F84185F00BA6CE1 /* g_behaviors.c in Sources */,
 				57F8E2BD21290918005614E7 /* g_game.c in Sources */,
 				5779F9CC222B98F9006DD981 /* grdn_biome.c in Sources */,
