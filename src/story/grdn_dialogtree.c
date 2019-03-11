@@ -25,6 +25,7 @@ GDialogTree* grdn_dialogtree_create(void)
 	
 	return tree;
 }
+
 void grdn_dialogtree_destory(GDialogTree* tree)
 {
 	
