@@ -16,7 +16,9 @@
 typedef struct GDialogNode
 {
 	unsigned int num;
-	GDialog** dlog;
+	GDialog* text;
+	GDialog** responses;
+	struct GDialogNode** links;
 	unsigned int cur;
 }GDialogNode;
 

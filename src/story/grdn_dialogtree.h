@@ -20,7 +20,7 @@ typedef struct GDialogTree
 
 GDialogTree* grdn_dialogtree_test(void);
 
-GDialogTree* grdn_dialogtree_create(void);
+GDialogTree* grdn_dialogtree_create(GDialogNode* root);
 void grdn_dialogtree_destory(GDialogTree* tree);
 
 void grdn_dialogtree_draw(GDialogTree* tree);

@@ -76,6 +76,8 @@
 		5797936321632A7C00A0F4DA /* g_particle_flock.c in Sources */ = {isa = PBXBuildFile; fileRef = 5797936121632A7C00A0F4DA /* g_particle_flock.c */; };
 		579F9BBA2236274A00BF3880 /* grdn_sense_map.h in Headers */ = {isa = PBXBuildFile; fileRef = 579F9BB82236274A00BF3880 /* grdn_sense_map.h */; };
 		579F9BBB2236274A00BF3880 /* grdn_sense_map.c in Sources */ = {isa = PBXBuildFile; fileRef = 579F9BB92236274A00BF3880 /* grdn_sense_map.c */; };
+		579F9BDC22375B7200BF3880 /* g_portal.h in Headers */ = {isa = PBXBuildFile; fileRef = 579F9BDA22375B7200BF3880 /* g_portal.h */; };
+		579F9BDD22375B7200BF3880 /* g_portal.c in Sources */ = {isa = PBXBuildFile; fileRef = 579F9BDB22375B7200BF3880 /* g_portal.c */; };
 		57A005551F7398FD003231CC /* g_light.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A005531F7398FD003231CC /* g_light.c */; };
 		57A005561F7398FD003231CC /* g_light.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A005531F7398FD003231CC /* g_light.c */; };
 		57A005571F7398FD003231CC /* g_light.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A005541F7398FD003231CC /* g_light.h */; };
@@ -226,6 +228,8 @@
 		5797936121632A7C00A0F4DA /* g_particle_flock.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_particle_flock.c; sourceTree = "<group>"; };
 		579F9BB82236274A00BF3880 /* grdn_sense_map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_sense_map.h; sourceTree = "<group>"; };
 		579F9BB92236274A00BF3880 /* grdn_sense_map.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_sense_map.c; sourceTree = "<group>"; };
+		579F9BDA22375B7200BF3880 /* g_portal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_portal.h; sourceTree = "<group>"; };
+		579F9BDB22375B7200BF3880 /* g_portal.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_portal.c; sourceTree = "<group>"; };
 		57A004E91F721717003231CC /* g_serial.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_serial.c; sourceTree = "<group>"; };
 		57A004EA1F721717003231CC /* g_serial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_serial.h; sourceTree = "<group>"; };
 		57A005511F7398C8003231CC /* g_think.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_think.c; sourceTree = "<group>"; };
@@ -597,22 +601,24 @@
 		D1E733621E95B93E0027A570 /* env */ = {
 			isa = PBXGroup;
 			children = (
-				57E29A8B1FB2994F00B14235 /* g_map.c */,
-				57E29A8C1FB2994F00B14235 /* g_map.h */,
 				D1E733651E95B93E0027A570 /* g_area.c */,
 				D1E733661E95B93E0027A570 /* g_area.h */,
-				57FEFCA01FAEAAB100CBCCE7 /* g_node.c */,
-				57FEFCA11FAEAAB100CBCCE7 /* g_node.h */,
-				57FEFCA51FAEAAB700CBCCE7 /* g_transform.c */,
-				57FEFCA41FAEAAB700CBCCE7 /* g_transform.h */,
-				D1E733681E95B93E0027A570 /* g_clock.h */,
 				D1E733671E95B93E0027A570 /* g_clock.c */,
+				D1E733681E95B93E0027A570 /* g_clock.h */,
 				D1E733691E95B93E0027A570 /* g_dialog.c */,
 				D1E7336A1E95B93E0027A570 /* g_dialog.h */,
-				57A0E4401FFF173000923E44 /* g_player.h */,
-				57A0E4411FFF173000923E44 /* g_player.c */,
-				5781AFC020868B97003659FD /* g_npc.h */,
+				57E29A8B1FB2994F00B14235 /* g_map.c */,
+				57E29A8C1FB2994F00B14235 /* g_map.h */,
+				57FEFCA01FAEAAB100CBCCE7 /* g_node.c */,
+				57FEFCA11FAEAAB100CBCCE7 /* g_node.h */,
 				5781AFC120868B97003659FD /* g_npc.c */,
+				5781AFC020868B97003659FD /* g_npc.h */,
+				57A0E4411FFF173000923E44 /* g_player.c */,
+				57A0E4401FFF173000923E44 /* g_player.h */,
+				579F9BDB22375B7200BF3880 /* g_portal.c */,
+				579F9BDA22375B7200BF3880 /* g_portal.h */,
+				57FEFCA51FAEAAB700CBCCE7 /* g_transform.c */,
+				57FEFCA41FAEAAB700CBCCE7 /* g_transform.h */,
 				D1E7336D1E95B93E0027A570 /* g_vecfield.c */,
 				D1E7336E1E95B93E0027A570 /* g_vecfield.h */,
 				D1E7336F1E95B93E0027A570 /* g_world.c */,
@@ -655,6 +661,7 @@
 				D1E3CCE61F84185F00BA6CE1 /* g_behaviors.h in Headers */,
 				5779F9AD222B89AC006DD981 /* grdn_city.h in Headers */,
 				5781AFC220868B97003659FD /* g_npc.h in Headers */,
+				579F9BDC22375B7200BF3880 /* g_portal.h in Headers */,
 				57D2AFB61FC3BA1200CCAD5C /* g_particle_emitter.h in Headers */,
 				5779F9A9222B899C006DD981 /* grdn_road.h in Headers */,
 				57D2AFBA1FC4848E00CCAD5C /* g_particle_system.h in Headers */,
@@ -854,6 +861,7 @@
 				57D2AF3F1FC2571E00CCAD5C /* g_water.c in Sources */,
 				574951591E9AC6D400212EAF /* g_attractor.c in Sources */,
 				57D2AF3B1FC2569700CCAD5C /* vmap.cpp in Sources */,
+				579F9BDD22375B7200BF3880 /* g_portal.c in Sources */,
 				5749515F1E9AC6D400212EAF /* g_particle.c in Sources */,
 				57CE908020BE4447004D69E7 /* grdn_physics.c in Sources */,
 				57CE907720BE4297004D69E7 /* grdn_physics_space.c in Sources */,

@@ -14,8 +14,8 @@
 GDialogNode* grdn_dialognode_create(void* gui, const char** text, unsigned int num)
 {
 	GDialogNode* node = calloc(1, sizeof(GDialogNode));
-	node->dlog	= calloc(1, sizeof(GDialogNode));
-	node->dlog[0]     = grdn_dialog_create(gui, text, num);
+	node->responses	= calloc(1, sizeof(GDialogNode));
+	node->responses[0]     = grdn_dialog_create(gui, text, num);
 	node->num	 = 1;
 	node->cur	 = 0;
 	return node;
@@ -24,13 +24,13 @@ GDialogNode* grdn_dialognode_create(void* gui, const char** text, unsigned int n
 void grdn_dialognode_destroy(GDialogNode* node)
 {
 	for (int i = 0; i < node->num; i++)
-		grdn_dialog_destroy(node->dlog[i]);
+		grdn_dialog_destroy(node->responses[i]);
 	free(node);
 }
 
 void grdn_dialognode_draw(GDialogNode* node)
 {
-	GDialog* dlog = node->dlog[node->cur];
+	GDialog* dlog = node->responses[node->cur];
 	if (!dlog->text)
 	{
 		printf("No text!\n");
