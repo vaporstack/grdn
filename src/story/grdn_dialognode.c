@@ -13,6 +13,12 @@
 
 GDialogNode* grdn_dialognode_create(void* gui, const char** text, unsigned int num)
 {
+	if ( !gui)
+	{
+		printf("ack tried to do something stupid\n");
+		return NULL;
+		
+	}
 	GDialogNode* node = calloc(1, sizeof(GDialogNode));
 	node->responses	= calloc(1, sizeof(GDialogNode));
 	node->responses[0]     = grdn_dialog_create(gui, text, num);
