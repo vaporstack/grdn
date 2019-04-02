@@ -279,7 +279,7 @@ static void calculate_layerindex(GArea* area)
 }
 
 
-#define TMP_TEST_SORT
+//#define TMP_TEST_SORT
 
 void g_area_draw_layered(GArea* area)
 {
