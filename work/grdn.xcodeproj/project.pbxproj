@@ -84,6 +84,8 @@
 		57A005581F7398FD003231CC /* g_light.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A005541F7398FD003231CC /* g_light.h */; };
 		57A0E4421FFF173000923E44 /* g_player.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A0E4401FFF173000923E44 /* g_player.h */; };
 		57A0E4431FFF173000923E44 /* g_player.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A0E4411FFF173000923E44 /* g_player.c */; };
+		57A1A1CD228994AD00D37979 /* grdn_input_connector.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A1A1CB228994AD00D37979 /* grdn_input_connector.h */; };
+		57A1A1CE228994AD00D37979 /* grdn_input_connector.c in Sources */ = {isa = PBXBuildFile; fileRef = 57A1A1CC228994AD00D37979 /* grdn_input_connector.c */; };
 		57ADF19721BB38A30099756F /* grdn_entity_subscriber.h in Headers */ = {isa = PBXBuildFile; fileRef = 57ADF19521BB38A30099756F /* grdn_entity_subscriber.h */; };
 		57ADF19821BB38A30099756F /* grdn_entity_subscriber.c in Sources */ = {isa = PBXBuildFile; fileRef = 57ADF19621BB38A30099756F /* grdn_entity_subscriber.c */; };
 		57B3559E206590BA00C73A8E /* g_jpred.c in Sources */ = {isa = PBXBuildFile; fileRef = 57B35598206590B900C73A8E /* g_jpred.c */; };
@@ -238,6 +240,8 @@
 		57A005541F7398FD003231CC /* g_light.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_light.h; sourceTree = "<group>"; };
 		57A0E4401FFF173000923E44 /* g_player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = g_player.h; sourceTree = "<group>"; };
 		57A0E4411FFF173000923E44 /* g_player.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = g_player.c; sourceTree = "<group>"; };
+		57A1A1CB228994AD00D37979 /* grdn_input_connector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_input_connector.h; sourceTree = "<group>"; };
+		57A1A1CC228994AD00D37979 /* grdn_input_connector.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_input_connector.c; sourceTree = "<group>"; };
 		57ADF19521BB38A30099756F /* grdn_entity_subscriber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_entity_subscriber.h; sourceTree = "<group>"; };
 		57ADF19621BB38A30099756F /* grdn_entity_subscriber.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_entity_subscriber.c; sourceTree = "<group>"; };
 		57B35597206590B900C73A8E /* g_body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_body.h; sourceTree = "<group>"; };
@@ -491,6 +495,15 @@
 			path = ent;
 			sourceTree = "<group>";
 		};
+		57A1A1CA2289949700D37979 /* input */ = {
+			isa = PBXGroup;
+			children = (
+				57A1A1CB228994AD00D37979 /* grdn_input_connector.h */,
+				57A1A1CC228994AD00D37979 /* grdn_input_connector.c */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
 		57B35596206590B900C73A8E /* comp */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +596,7 @@
 				57B35596206590B900C73A8E /* comp */,
 				5730AF941FE7162700EF5C2F /* core */,
 				578174D11FBA955E00E004F4 /* story */,
+				57A1A1CA2289949700D37979 /* input */,
 				57D2AF371FC2569700CCAD5C /* lang */,
 				49F9FFA51F61FE0300D5D7B9 /* comp */,
 				57D2AFD51FCB83C500CCAD5C /* render */,
@@ -677,6 +691,7 @@
 				57ADF19721BB38A30099756F /* grdn_entity_subscriber.h in Headers */,
 				574399E9209F9BAD009A3A06 /* g_entity_manager.h in Headers */,
 				574951671E9AC6D400212EAF /* g_particlesystem.h in Headers */,
+				57A1A1CD228994AD00D37979 /* grdn_input_connector.h in Headers */,
 				57437E0F207FDD7900D53A0F /* g_render_wsh.h in Headers */,
 				5779F9B5222B8B20006DD981 /* grdn_block.h in Headers */,
 				57F8E2B9212907DE005614E7 /* g_entity.h in Headers */,
@@ -853,6 +868,7 @@
 				57939B5321BF685800F74BF4 /* grdn_entity_typelibrary.c in Sources */,
 				57D2AFCC1FC93BE100CCAD5C /* g_factory.c in Sources */,
 				57F8E2BA212907DE005614E7 /* g_entsys.c in Sources */,
+				57A1A1CE228994AD00D37979 /* grdn_input_connector.c in Sources */,
 				57F8E2B8212907DE005614E7 /* g_entity.c in Sources */,
 				57561463218E5D210040B44C /* grdn_dialogtree.c in Sources */,
 				5708AA03208FF89800A9E776 /* g_drawable.c in Sources */,

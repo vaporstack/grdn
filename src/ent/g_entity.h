@@ -25,8 +25,8 @@ typedef enum {
 	G_ENTITY_ENEMY    = 0x02,
 	G_ENTITY_INTERACT = 0x04,
 	//DATA     = 0x08,
-	GUARD,
-	ALL = 0xFF
+	G_ENTITY_GUARD = 0x08,
+	G_ENTITY_ALL = 0xFF
 } g_entity_flags;
 
 typedef struct GEntity
