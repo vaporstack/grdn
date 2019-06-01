@@ -13,7 +13,7 @@
 //#include <r4/r4.h>
 //#include "../../../wsh/wsh.h"
 
-#include <deps/vector/vector.h>
+#include <vector/vector.h>
 
 #include "g_attractor.h"
 

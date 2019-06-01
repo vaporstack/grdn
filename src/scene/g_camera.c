@@ -12,9 +12,9 @@
 #include <stdlib.h>
 
 //	todo: get rid of this!
-#include <r4/r4.h>
 #include <drw/drw.h>
-#include <deps/vector/vector.h>
+#include <r4/r4.h>
+#include <vector/vector.h>
 
 static GEntity* current_cam = NULL;
 
@@ -48,30 +48,28 @@ void g_camera_destroy(GEntity* camera)
 
 void g_camera_apply(GEntity* camera)
 {
-	if ( !camera)
+	if (!camera)
 	{
 		printf("No camera! %s\n", __func__);
 		return;
 	}
-	
+
 	drw_translate(-camera->transform.position[0], -camera->transform.position[1], -camera->transform.position[2]);
 	GCamera* cdata = (GCamera*)camera->data;
 	if (cdata->shake_enabled)
 	{
 		drw_translate_vec3(cdata->shake);
 	}
-	
-	
 }
 
 void g_camera_deapply(GEntity* camera)
 {
-	if ( !camera)
+	if (!camera)
 	{
 		printf("No camera! %s\n", __func__);
 		return;
 	}
-	
+
 	drw_translate(camera->transform.position[0], camera->transform.position[1], camera->transform.position[2]);
 	GCamera* cdata = (GCamera*)camera->data;
 	if (cdata->shake_enabled)
@@ -88,12 +86,12 @@ void g_camera_set_target(GEntity* camera, vec3_t* target)
 
 void g_camera_update(GEntity* camera)
 {
-	if ( !camera)
+	if (!camera)
 	{
 		printf("No camera! %s\n", __func__);
 		return;
 	}
-	
+
 	GCamera* cdata = (GCamera*)camera->data;
 
 	if (cdata->target)

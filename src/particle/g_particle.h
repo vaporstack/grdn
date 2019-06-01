@@ -9,15 +9,17 @@
 #ifndef g_particle_h
 #define g_particle_h
 
-#include <deps/gl-matrix/gl-matrix.h>
+#include <gl-matrix/gl-matrix.h>
 
 //	-------	old
-enum ParticleSizeLifeOptions {
+enum ParticleSizeLifeOptions
+{
 	PARTICLE_SIZE_LIFE_ENV,
 	PARTICLE_SIZE_LIFE_CONST
 };
 
-enum ParticleLifeCurveOptions {
+enum ParticleLifeCurveOptions
+{
 	PARTICLE_LIFE_CURVE_LINEAR,
 	PARTICLE_LIFE_CURVE_EASE,
 	PARTICLE_LIFE_CURVE_SIN

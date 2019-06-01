@@ -8,8 +8,8 @@
 #include "g_area.h"
 
 //#include "run_area.h"
-#include <deps/gl-matrix/gl-matrix.h>
 #include <drw/drw.h>
+#include <gl-matrix/gl-matrix.h>
 #include <grdn/grdn.h>
 #include <r4/src/geo/r_object.h>
 #include <stdlib.h>
@@ -278,7 +278,6 @@ static void calculate_layerindex(GArea* area)
 {
 }
 
-
 //#define TMP_TEST_SORT
 
 void g_area_draw_layered(GArea* area)
@@ -325,7 +324,7 @@ void g_area_draw_layered(GArea* area)
 			layers		    = realloc(layers, sizeof(int));
 			layers[nlayers - 1] = layer;
 #ifdef TMP_TEST_SORT
-	printf("Unique layer: %d\n", layer);
+			printf("Unique layer: %d\n", layer);
 #endif
 		}
 	}
@@ -344,7 +343,7 @@ void g_area_draw_layered(GArea* area)
 	drw_screensize_get(&w, &h);
 	for (int i = 0; i < nlayers; i++)
 	{
-		
+
 		for (int j = 0; j < num; j++)
 		{
 			if (entities[j]->layer == layers[i])
@@ -352,15 +351,14 @@ void g_area_draw_layered(GArea* area)
 				g_area_draw_entity(entities[j]);
 			}
 		}
-		drw_color(.05,.1,.2,.11);
+		drw_color(.05, .1, .2, .11);
 		drw_fill_set(true);
-		drw_rect(0,0, w,h);
+		drw_rect(0, 0, w, h);
 		drw_fill_pop();
 		drw_color_pop();
 	}
-	
-	free(layers);
 
+	free(layers);
 }
 
 void g_area_draw(GArea* area)

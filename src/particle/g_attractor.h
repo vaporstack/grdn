@@ -14,7 +14,7 @@
 //#include "../../../wsh/wsh.h"
 //#ifdef DISALLOW_WHILE_VEC3_REFACTOR
 
-#include <deps/gl-matrix/gl-matrix.h>
+#include <gl-matrix/gl-matrix.h>
 
 #include "g_particle.h"
 
