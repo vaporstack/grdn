@@ -9,6 +9,7 @@
 #define g_area_h_
 
 #include "../ent/g_entity.h"
+#include <coer/coer.h>
 #include <stdio.h>
 
 typedef struct GArea
@@ -19,6 +20,7 @@ typedef struct GArea
 	GEntity** entities;
 	int       num_entities;
 	WRect     bounds;
+	CPoint    position;
 } GArea;
 
 GArea* g_area_create(void);
