@@ -59,6 +59,7 @@ typedef struct GEntity
 	// WSequence* seq;
 	GBody* body;
 	void*  brain;
+	void*  program;
 	void*  data;
 	void*  inventory;
 	void*  weapons;

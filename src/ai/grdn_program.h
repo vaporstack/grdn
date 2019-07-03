@@ -11,17 +11,16 @@
 
 #include "../ent/g_entity.h"
 
-typedef int (*grdn_directive_simple_fn)(GEntity* , void*);
-
+typedef int (*grdn_directive_simple_fn)(GEntity*, void*);
 
 typedef struct
 {
-	int num;
-	int pos;
-	grdn_directive_simple_fn ** directives;
+	int			   num;
+	int			   pos;
+	grdn_directive_simple_fn** directives;
 } GProgram;
 
 GProgram* grdn_program_create(void);
-
+void      grdn_program_add(GProgram* prog, grdn_directive_simple_fn directive);
 
 #endif /* grdn_program_h */
