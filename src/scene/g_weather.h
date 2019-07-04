@@ -8,7 +8,7 @@
 #ifndef g_weather_h_
 #define g_weather_h_
 
-#include <gl-matrix/gl-matrix.h>
+#include <deps/gl-matrix/gl-matrix.h>
 
 typedef struct GWeather
 {

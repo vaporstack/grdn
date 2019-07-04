@@ -46,8 +46,8 @@ static void link_two_areas(GLevel* level)
 	g_area_register_entity(a, ga);
 	g_area_register_entity(b, gb);
 
-	g_area_link_add(a, b);
-	g_area_link_add(b, a);
+	// g_area_link_add(a, b);
+	// g_area_link_add(b, a);
 
 	/*int n = level->num;
 	int*    pool  = calloc(n, sizeof(int));
@@ -100,7 +100,8 @@ GLevel* g_level_create(void)
 
 static void print(int* data, int num)
 {
-	for (int i = 0; i < num; i++) {
+	for (int i = 0; i < num; i++)
+	{
 		printf("%d,", data[i]);
 	}
 	printf("\n");
@@ -108,7 +109,8 @@ static void print(int* data, int num)
 
 bool all_areas_linked(GLevel* level)
 {
-	for (int i = 0; i < level->num; i++) {
+	for (int i = 0; i < level->num; i++)
+	{
 		GArea* area = level->areas[i];
 		if (area->link_num == 0)
 			return false;
@@ -123,7 +125,8 @@ GArea* any_random_area(GLevel* level, GArea* exclude)
 	GArea* match = NULL;
 
 	bool done = false;
-	while (!done) {
+	while (!done)
+	{
 		int which = r_rand_double(NULL) * level->num;
 		printf("maybe %d\n", which);
 		match = level->areas[which];
@@ -148,9 +151,11 @@ GArea* random_area_with_no_links(GLevel* level, GArea* exclude)
 	int* orphans = NULL;
 	//calloc(n, sizeof(int));
 	int ct = 0;
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
+	{
 		GArea* area = level->areas[i];
-		if (area->link_num == 0) {
+		if (area->link_num == 0)
+		{
 			ct++;
 			orphans		= realloc(orphans, ct * sizeof(int));
 			orphans[ct - 1] = i;
@@ -159,7 +164,8 @@ GArea* random_area_with_no_links(GLevel* level, GArea* exclude)
 	printf("have %d orphans\n", ct);
 	int    which = -1;
 	GArea* match = NULL;
-	do {
+	do
+	{
 		printf("not matched yet...\n");
 		which = r_rand_double(NULL) * ct;
 		match = level->areas[(int)which];
@@ -187,7 +193,8 @@ GLevel* g_level_exterior(GLevelGenAttr attr)
 	//printf("Generating an exterior\n");
 	GLevel* level = g_level_create();
 
-	for (int i = 0, n = attr.limit; i < n; i++) {
+	for (int i = 0, n = attr.limit; i < n; i++)
+	{
 		//printf("level %d\n", i);
 		GArea* area      = g_area_create();
 		area->position.x = (-.5 + r_rand_double(&rng)) * attr.bounds;
@@ -197,7 +204,8 @@ GLevel* g_level_exterior(GLevelGenAttr attr)
 	}
 
 	printf("let's start this potentially lock shit forever\n");
-	while (!all_areas_linked(level)) {
+	while (!all_areas_linked(level))
+	{
 		link_two_areas(level);
 	}
 
@@ -211,11 +219,13 @@ GLevel* g_level_exterior(GLevelGenAttr attr)
 
 void g_level_destroy(GLevel* level)
 {
-	if (!level) {
+	if (!level)
+	{
 		printf("Can't destroy a NULL level\n");
 		return;
 	}
-	for (int i = 0, n = level->num; i < n; i++) {
+	for (int i = 0, n = level->num; i < n; i++)
+	{
 		g_area_destroy(level->areas[i]);
 	}
 	free(level);

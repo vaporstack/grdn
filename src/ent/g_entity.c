@@ -8,7 +8,7 @@
 
 #include "g_entity.h"
 
-#include <gl-matrix/gl-matrix.h>
+#include <deps/gl-matrix/gl-matrix.h>
 
 #include "../util/grdn_log.h"
 #include "g_think.h"

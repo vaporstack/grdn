@@ -12,7 +12,7 @@
 //#include "../garden.h"
 #include "../comp/g_body.h"
 #include "../env/g_node.h"
-#include <gl-matrix/gl-matrix.h>
+#include <deps/gl-matrix/gl-matrix.h>
 #include <r4/src/geo/r_object.h>
 //#include "grdn_action_mgr.h"
 
@@ -20,14 +20,13 @@
 
 typedef void (*grdn_action_function)(void* actor, void* target);
 
-typedef enum
-{
+typedef enum {
 	G_ENTITY_SCENERY  = 0x01,
 	G_ENTITY_ENEMY    = 0x02,
 	G_ENTITY_INTERACT = 0x04,
 	//DATA     = 0x08,
 	G_ENTITY_GUARD = 0x08,
-	G_ENTITY_ALL   = 0xFF
+	G_ENTITY_ALL = 0xFF
 } g_entity_flags;
 
 typedef struct GEntity
@@ -53,13 +52,12 @@ typedef struct GEntity
 	//unsigned int	  num_interactions;
 	//grdn_action_function* available_interactions;
 	signed int layer;
-	double     draw_priority;
-
-	int flags;
+	double draw_priority;
+	
+	int	flags;
 	// WSequence* seq;
 	GBody* body;
 	void*  brain;
-	void*  program;
 	void*  data;
 	void*  inventory;
 	void*  weapons;

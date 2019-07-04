@@ -18,6 +18,7 @@ typedef struct
 	int			   num;
 	int			   pos;
 	grdn_directive_simple_fn** directives;
+	grdn_directive_simple_fn  directive;
 } GProgram;
 
 GProgram* grdn_program_create(void);

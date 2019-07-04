@@ -35,7 +35,7 @@ static void update(GEntity* ent)
 	double t = r_time();
 	double v = .5 + (.5 * cos(t / info->period));
 	
-	printf("%.3f\n", v);
+	//printf("%.3f\n", v);
 	
 	
 	info->output = v;

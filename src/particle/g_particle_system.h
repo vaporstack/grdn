@@ -9,13 +9,14 @@
 #ifndef g_particle_system_h
 #define g_particle_system_h
 
-#include <gl-matrix/gl-matrix.h>
-#include <vector/vector.h>
+#include <deps/gl-matrix/gl-matrix.h>
+#include <deps/vector/vector.h>
 
 #include "g_particle.h"
 
 #include "g_particle_affector.h"
 #include "g_particle_emitter.h"
+
 
 enum GParticleFloorType
 {
@@ -55,6 +56,7 @@ enum GParticleBoundingType
 	GPARTICLE_BOUND_SPHERE
 };
 
+
 typedef struct GParticleSystem
 {
 
@@ -71,8 +73,8 @@ typedef struct GParticleSystem
 	int		  num;
 	int		  max;
 	float		  death;
-	float		  size;
-
+	float 		  size;
+	
 	int size_over_life_type;
 	// particle_emit_func emit;
 

@@ -23,7 +23,7 @@ use_c99()
 
 option(BuildGrdnLibrary "Build the brush library for embedding or linking" ON)
 option(BuildGrdnTest "BuildGrdnTest" ON)
-option(BuildGrdnDemo "BuildDemo" ON)
+option(BuildGrdnDemo "BuildDemo" OFF)
 option(BuildGrdnDocumentation "BuildGrdnDocumentation" OFF)
 
 #if(${BuildGrdnTest})
