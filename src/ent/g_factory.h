@@ -8,23 +8,23 @@
 #ifndef g_factory_h_
 #define g_factory_h_
 
+#include <cmap/map.h>
 #include <grdn/grdn.h>
-#include <deps/cmap/map.h>
 
 typedef struct GFactory
 {
-	int foo;
+	int	   foo;
 	struct map_t* map;
-}GFactory;
+} GFactory;
 
 GFactory* g_factory_create(void);
-void g_factory_destroy(GFactory* factory);
+void      g_factory_destroy(GFactory* factory);
 
-typedef GEntity *(*factory_create_func)(void);
+typedef GEntity* (*factory_create_func)(void);
 
-GEntity *g_factory_create_ident(const char* type);
-GEntity *g_factory_create_type(int type);
+GEntity* g_factory_create_ident(const char* type);
+GEntity* g_factory_create_type(int type);
 
-int      g_factory_register(factory_create_func);
+int g_factory_register(factory_create_func);
 
 #endif

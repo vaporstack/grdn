@@ -12,7 +12,7 @@
 //	todo; we are deprecating this in favor of CTransform (libcoer)
 //
 
-#include <deps/gl-matrix/gl-matrix.h>
+#include <gl-matrix/gl-matrix.h>
 
 typedef struct GTransform
 {

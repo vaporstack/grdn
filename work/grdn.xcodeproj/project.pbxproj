@@ -34,6 +34,12 @@
 		574951661E9AC6D400212EAF /* g_particlesystem.c in Sources */ = {isa = PBXBuildFile; fileRef = 574951561E9AC6D400212EAF /* g_particlesystem.c */; };
 		574951671E9AC6D400212EAF /* g_particlesystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 574951571E9AC6D400212EAF /* g_particlesystem.h */; };
 		574951681E9AC6D400212EAF /* g_particlesystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 574951571E9AC6D400212EAF /* g_particlesystem.h */; };
+		5749676122CF1BAF00C8FB3C /* g_levelgen.c in Sources */ = {isa = PBXBuildFile; fileRef = 5749675F22CF1BAF00C8FB3C /* g_levelgen.c */; };
+		5749676222CF1BAF00C8FB3C /* g_levelgen.h in Headers */ = {isa = PBXBuildFile; fileRef = 5749676022CF1BAF00C8FB3C /* g_levelgen.h */; };
+		5749676522CF1BC000C8FB3C /* grdn_program.c in Sources */ = {isa = PBXBuildFile; fileRef = 5749676322CF1BC000C8FB3C /* grdn_program.c */; };
+		5749676622CF1BC000C8FB3C /* grdn_program.h in Headers */ = {isa = PBXBuildFile; fileRef = 5749676422CF1BC000C8FB3C /* grdn_program.h */; };
+		5749676A22CF1BDE00C8FB3C /* grdn_sun.h in Headers */ = {isa = PBXBuildFile; fileRef = 5749676822CF1BDD00C8FB3C /* grdn_sun.h */; };
+		5749676B22CF1BDE00C8FB3C /* grdn_sun.c in Sources */ = {isa = PBXBuildFile; fileRef = 5749676922CF1BDD00C8FB3C /* grdn_sun.c */; };
 		5756145E218E5C510040B44C /* grdn_dialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 5756145C218E5C510040B44C /* grdn_dialog.h */; };
 		5756145F218E5C510040B44C /* grdn_dialog.c in Sources */ = {isa = PBXBuildFile; fileRef = 5756145D218E5C510040B44C /* grdn_dialog.c */; };
 		57561462218E5D210040B44C /* grdn_dialogtree.h in Headers */ = {isa = PBXBuildFile; fileRef = 57561460218E5D210040B44C /* grdn_dialogtree.h */; };
@@ -188,6 +194,12 @@
 		574951541E9AC6D400212EAF /* g_particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_particle.h; sourceTree = "<group>"; };
 		574951561E9AC6D400212EAF /* g_particlesystem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_particlesystem.c; sourceTree = "<group>"; };
 		574951571E9AC6D400212EAF /* g_particlesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_particlesystem.h; sourceTree = "<group>"; };
+		5749675F22CF1BAF00C8FB3C /* g_levelgen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = g_levelgen.c; sourceTree = "<group>"; };
+		5749676022CF1BAF00C8FB3C /* g_levelgen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = g_levelgen.h; sourceTree = "<group>"; };
+		5749676322CF1BC000C8FB3C /* grdn_program.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = grdn_program.c; sourceTree = "<group>"; };
+		5749676422CF1BC000C8FB3C /* grdn_program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grdn_program.h; sourceTree = "<group>"; };
+		5749676822CF1BDD00C8FB3C /* grdn_sun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grdn_sun.h; sourceTree = "<group>"; };
+		5749676922CF1BDD00C8FB3C /* grdn_sun.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = grdn_sun.c; sourceTree = "<group>"; };
 		5756145C218E5C510040B44C /* grdn_dialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_dialog.h; sourceTree = "<group>"; };
 		5756145D218E5C510040B44C /* grdn_dialog.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = grdn_dialog.c; sourceTree = "<group>"; };
 		57561460218E5D210040B44C /* grdn_dialogtree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grdn_dialogtree.h; sourceTree = "<group>"; };
@@ -399,9 +411,20 @@
 			path = physics;
 			sourceTree = "<group>";
 		};
+		5749676722CF1BDD00C8FB3C /* sim */ = {
+			isa = PBXGroup;
+			children = (
+				5749676822CF1BDD00C8FB3C /* grdn_sun.h */,
+				5749676922CF1BDD00C8FB3C /* grdn_sun.c */,
+			);
+			path = sim;
+			sourceTree = "<group>";
+		};
 		577469F621CE289D00B0DCD8 /* ai */ = {
 			isa = PBXGroup;
 			children = (
+				5749676322CF1BC000C8FB3C /* grdn_program.c */,
+				5749676422CF1BC000C8FB3C /* grdn_program.h */,
 				57746A0021CE2A6900B0DCD8 /* grdn_ai_actor.c */,
 				577469FF21CE2A6900B0DCD8 /* grdn_ai_actor.h */,
 				577469F821CE28B400B0DCD8 /* grdn_ai_sensor.c */,
@@ -605,6 +628,7 @@
 				57A005501F7398C8003231CC /* ent */,
 				5749516B1E9AC6D900212EAF /* physics */,
 				5749514F1E9AC6D400212EAF /* particle */,
+				5749676722CF1BDD00C8FB3C /* sim */,
 				D1E733621E95B93E0027A570 /* env */,
 				57A004E81F721717003231CC /* util */,
 			);
@@ -629,6 +653,8 @@
 				5781AFC020868B97003659FD /* g_npc.h */,
 				57A0E4411FFF173000923E44 /* g_player.c */,
 				57A0E4401FFF173000923E44 /* g_player.h */,
+				5749675F22CF1BAF00C8FB3C /* g_levelgen.c */,
+				5749676022CF1BAF00C8FB3C /* g_levelgen.h */,
 				579F9BDB22375B7200BF3880 /* g_portal.c */,
 				579F9BDA22375B7200BF3880 /* g_portal.h */,
 				57FEFCA51FAEAAB700CBCCE7 /* g_transform.c */,
@@ -661,6 +687,7 @@
 				577469F921CE28B400B0DCD8 /* grdn_ai_sensor.h in Headers */,
 				57D2AFCF1FC93BE100CCAD5C /* g_sticky.h in Headers */,
 				574399E5209F9A3D009A3A06 /* g_extloader.h in Headers */,
+				5749676222CF1BAF00C8FB3C /* g_levelgen.h in Headers */,
 				5730AF981FE7162700EF5C2F /* g_game.h in Headers */,
 				5759736B21BB5ECB0033EF48 /* grdn_action_mgr.h in Headers */,
 				57B355A2206590BA00C73A8E /* g_dac.h in Headers */,
@@ -684,6 +711,7 @@
 				D1DB87FC1F1434D800BA023B /* g_textseq.h in Headers */,
 				49F9FFA91F61FE1100D5D7B9 /* g_body.h in Headers */,
 				577469FD21CE29D300B0DCD8 /* grdn_ai_thinker.h in Headers */,
+				5749676A22CF1BDE00C8FB3C /* grdn_sun.h in Headers */,
 				57CE907F20BE4447004D69E7 /* grdn_physics_cloth.h in Headers */,
 				5779F9B9222B8B39006DD981 /* grdn_feature.h in Headers */,
 				57D2AF3E1FC2571E00CCAD5C /* g_water.h in Headers */,
@@ -708,6 +736,7 @@
 				D1E7337D1E95B93E0027A570 /* g_vecfield.h in Headers */,
 				D1E733751E95B93E0027A570 /* g_area.h in Headers */,
 				57CE907820BE4297004D69E7 /* grdn_physics_space.h in Headers */,
+				5749676622CF1BC000C8FB3C /* grdn_program.h in Headers */,
 				57FEFCA31FAEAAB100CBCCE7 /* g_node.h in Headers */,
 				D1E733791E95B93E0027A570 /* g_dialog.h in Headers */,
 				D1E7337F1E95B93E0027A570 /* g_world.h in Headers */,
@@ -825,6 +854,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = D16543F51E945C360078701E;
@@ -860,6 +890,7 @@
 				D1DB87F61F1434D800BA023B /* g_camera.c in Sources */,
 				57CE907E20BE4447004D69E7 /* grdn_physics_cloth.c in Sources */,
 				577469FE21CE29D300B0DCD8 /* grdn_ai_thinker.c in Sources */,
+				5749676522CF1BC000C8FB3C /* grdn_program.c in Sources */,
 				57ADF19821BB38A30099756F /* grdn_entity_subscriber.c in Sources */,
 				57746A0621CE2ABE00B0DCD8 /* grdn_ai.c in Sources */,
 				57E624CA21BB503F00936385 /* grdn_log.c in Sources */,
@@ -888,6 +919,8 @@
 				57A005551F7398FD003231CC /* g_light.c in Sources */,
 				574951651E9AC6D400212EAF /* g_particlesystem.c in Sources */,
 				57D2AFBB1FC4848E00CCAD5C /* g_particle_system.c in Sources */,
+				5749676122CF1BAF00C8FB3C /* g_levelgen.c in Sources */,
+				5749676B22CF1BDE00C8FB3C /* grdn_sun.c in Sources */,
 				57FEFCA71FAEAAB700CBCCE7 /* g_transform.c in Sources */,
 				5759736C21BB5ECB0033EF48 /* grdn_action_mgr.c in Sources */,
 				57D2AFD91FCB83D000CCAD5C /* g_render.c in Sources */,

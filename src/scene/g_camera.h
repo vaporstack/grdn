@@ -11,7 +11,7 @@
 //#include <grdn/grdn.h>
 
 #include "../ent/g_entity.h"
-#include <deps/gl-matrix/gl-matrix.h>
+#include <gl-matrix/gl-matrix.h>
 
 typedef struct GCamera
 {

@@ -20,14 +20,19 @@ typedef struct GArea
 	GEntity** entities;
 	int       num_entities;
 	WRect     bounds;
+	
 	int       link_num;
 	CPoint    position;
+	void**    links;
+	
 } GArea;
 
 GArea* g_area_create(void);
 void   g_area_destroy(GArea*);
 
 //void g_area_populate_placeholder(GArea*);
+
+int g_area_link_add(GArea* src, GArea* dst);
 
 void g_area_register_entity(GArea*, GEntity*);
 void g_area_unregister_entity(GArea*, GEntity*);

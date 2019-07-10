@@ -8,8 +8,8 @@
 #include "g_area.h"
 
 //#include "run_area.h"
-#include <deps/gl-matrix/gl-matrix.h>
 #include <drw/drw.h>
+#include <gl-matrix/gl-matrix.h>
 #include <grdn/grdn.h>
 #include <r4/src/geo/r_object.h>
 #include <stdlib.h>
@@ -246,6 +246,7 @@ static void g_area_draw_entity(GEntity* entity)
 		drw_push();
 		drw_gtransform_apply(entity->transform);
 		drw_square(32);
+		drw_type_draw(entity->name);
 		/*drw_translate2f(obj->transform.position[0],
 				      obj->transform.position[1]);
                          			drw_square(32);
@@ -277,7 +278,6 @@ static void g_area_draw_naive(GArea* area)
 static void calculate_layerindex(GArea* area)
 {
 }
-
 
 //#define TMP_TEST_SORT
 
@@ -325,7 +325,7 @@ void g_area_draw_layered(GArea* area)
 			layers		    = realloc(layers, sizeof(int));
 			layers[nlayers - 1] = layer;
 #ifdef TMP_TEST_SORT
-	printf("Unique layer: %d\n", layer);
+			printf("Unique layer: %d\n", layer);
 #endif
 		}
 	}
@@ -344,7 +344,7 @@ void g_area_draw_layered(GArea* area)
 	drw_screensize_get(&w, &h);
 	for (int i = 0; i < nlayers; i++)
 	{
-		
+
 		for (int j = 0; j < num; j++)
 		{
 			if (entities[j]->layer == layers[i])
@@ -352,15 +352,36 @@ void g_area_draw_layered(GArea* area)
 				g_area_draw_entity(entities[j]);
 			}
 		}
-		drw_color(.05,.1,.2,.11);
+		drw_color(.05, .1, .2, .11);
 		drw_fill_set(true);
-		drw_rect(0,0, w,h);
+		drw_rect(0, 0, w, h);
 		drw_fill_pop();
 		drw_color_pop();
 	}
-	
-	free(layers);
 
+	free(layers);
+}
+
+#include <assert.h>
+
+int g_area_link_add(GArea* src, GArea* dst)
+{
+	assert(src != dst);
+	//	safety check
+	for (int i = 0; i < src->link_num; i++)
+	{
+		if (dst == src->links[i])
+		{
+			printf("ALREADY LINKED HERE yo\n");
+			return -1;
+		}
+	}
+
+	src->link_num++;
+	src->links		      = realloc(src->links, src->link_num * sizeof(GArea));
+	src->links[src->link_num - 1] = dst;
+	printf("Area has %d links\n", src->link_num);
+	return src->link_num;
 }
 
 void g_area_draw(GArea* area)
@@ -373,9 +394,9 @@ void g_area_draw(GArea* area)
 
 #define DEFAULT_AREA_RECT 1024
 
-GArea* g_area_create()
+GArea* g_area_create(void)
 {
-	GArea* area	= malloc(sizeof(GArea));
+	GArea* area	= calloc(1, sizeof(GArea));
 	area->entities     = NULL;
 	area->num_entities = 0;
 	area->friction     = 1. - .01;

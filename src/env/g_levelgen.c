@@ -210,6 +210,9 @@ GLevel* g_level_exterior(GLevelGenAttr attr)
 	}
 
 	link_two_areas(level);
+	 //	ok something got lost here
+	
+	
 	// while (!all_areas_linked(level)) {
 	// 	link_two_areas(level);
 	// }

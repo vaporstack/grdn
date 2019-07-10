@@ -12,12 +12,16 @@
 #include "grdn_ai_actor.h"
 #include "grdn_ai_sensor.h"
 #include "grdn_ai_thinker.h"
+#include "grdn_program.h"
 
 typedef struct GAi
 {
-	GActor* actor;
+	GActor*       actor;
 	GSensorArray* sensors;
 	GThinker* thinker;
+	GProgram* current_program;
+	GProgram** available_programs;
+	
 }GAi;
 
 GAi* grdn_ai_create(GEntity* ent);
