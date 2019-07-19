@@ -429,20 +429,25 @@ void g_particle_system_draw_debug(GParticleSystem* sys)
 	{
 		printf("No emitter!\n");
 	}else{
-		drw_color_push();
+//		drw_color_push();
+		drw_color_save();
 		draw_circles(sys->emitter->position, sys->emitter->bounds);
-		drw_color_pop();
+//		drw_color_pop();
+		drw_color_restore();
 	}
+	
 	for (int i = 0; i < sys->max; i++)
 	{
 		Particle* p = sys->data[i];
 		if (!p)
 			continue;
-		drw_push();
+		//drw_push();
+		drw_color_save();
 		drw_translate_vec3(p->position);
 
 		drw_square(10);
 		drw_pop();
+		drw_color_restore();
 	}
 
 	/*

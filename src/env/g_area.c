@@ -356,7 +356,7 @@ void g_area_draw_layered(GArea* area)
 		drw_fill_set(true);
 		drw_rect(0, 0, w, h);
 		drw_fill_pop();
-		drw_color_pop();
+		//drw_color_pop();
 	}
 
 	free(layers);

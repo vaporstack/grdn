@@ -204,10 +204,10 @@ GLevel* g_level_exterior(GLevelGenAttr attr)
 	}
 
 	printf("let's start this potentially lock shit forever\n");
-	while (!all_areas_linked(level))
-	{
-		link_two_areas(level);
-	}
+//	while (!all_areas_linked(level))
+//	{
+		//link_two_areas(level);
+//	}
 
 	link_two_areas(level);
 	 //	ok something got lost here
